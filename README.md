@@ -1,21 +1,19 @@
 # Less Is More UI
 
-Minimalist UI design skill for AI agents.
+> "Good design is as little design as possible." — Dieter Rams
 
-Inspired by modernist designers like Ludwig Mies van der Rohe and Dieter Rams.
+A specialized design skill for AI agents to generate calm, high-quality, and functional web interfaces. 
 
-The skill helps agents generate web interfaces that are:
+## The Problem
+Most AI-generated UIs suffer from "visual noise": excessive shadows, generic gradients, and cluttered layouts. They often lack a clear typographic hierarchy and rational structure because LLMs tend to default to "over-designed" or generic components.
 
-- minimal
-- calm
-- functional
-- typography-focused
-- structured with clear layout
-- using subtle color palettes
+## The Solution
+`less-is-more-ui` provides a set of modernist constraints that force the agent to prioritize content and function. It transforms the agent from a generic coder into a senior designer with a Miesian perspective, focusing on:
 
-## Repository
-
-https://github.com/Mendiak/less-is-more-ui
+- **Rational Layouts:** Using grid systems and generous whitespace instead of decorative containers.
+- **Typography-First Hierarchy:** Letting text carry the weight of the interface.
+- **Subtle Palettes:** Using color to support, not dominate.
+- **Systematic Spacing:** A predefined variable-based scale for consistent rhythm.
 
 ## Installation
 
@@ -25,24 +23,35 @@ Install using the skills CLI:
 npx skills add Mendiak/less-is-more-ui
 ```
 
+## How to Use with AI Agents
+
+Once activated, you can direct your agent with high-level design intent. The agent will use the bundled resources (`principles.md`, `references/components.md`, etc.) to make informed decisions.
+
+**Example Prompts:**
+- *"Refactor this dashboard following the Less Is More manifesto."*
+- *"Simplify this landing page. Use only the scale variables and remove all decorative elements."*
+- *"Build a contact form using the 'Honest Materials' precept (semantic HTML only)."*
+
 ## Demo
+Visit the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) for a curated showcase of these principles in action.
 
-Visit the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) for an interactive showcase of design principles.
+## Repository Structure
 
-## Files
-
-- `index.html` – main demo page (Museum of the Essential)
-- `style.css` – demo styling
-- `SKILL.md` – main entry point
-- `principles.md` – design philosophy
-- `design-process.md` – interface design method
-- `anti-patterns.md` – things to avoid
-- `design-checklist.md` – final UI quality checklist
-- `examples/` – basic HTML and CSS examples
-- `scripts/reset.css` – CSS reset for modernist starts
+- `SKILL.md` – Main entry point and agent instructions.
+- `principles.md` – Core design philosophy (Mies, Sullivan, Rams).
+- `design-process.md` – Step-by-step method for minimal interface design.
+- `anti-patterns.md` – Visual friction to identify and remove.
+- `design-checklist.md` – Final UI quality verification.
+- `references/components.md` – Pattern library for buttons, inputs, and cards.
+- `scripts/reset.css` – Tiny modernist reset for a clean start.
+- `examples/` – Basic implementation examples using variables.
 
 ## Philosophy
 
-Less is more.  
-Form follows function.  
-Less but better.
+1. **Less is more.** (Reduction to the essential)
+2. **Form follows function.** (Logic over decoration)
+3. **Less but better.** (Instinctive simplicity)
+
+---
+
+Developed for clarity and purpose by [Mendiak](https://github.com/Mendiak).
