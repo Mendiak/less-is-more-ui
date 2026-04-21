@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum of the Essential</title>
+    <link rel="stylesheet" href="scripts/reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Museum of the Essential</h1>
+        <p class="subtitle">Celebrating Design Principles: Clarity, Function, and Timelessness</p>
+    </header>
+
+    <main>
+        <section id="mies-van-der-rohe">
+            <h2>Ludwig Mies van der Rohe: Less Is More</h2>
+            <blockquote>"God is in the details."</blockquote>
+            <p>Mies van der Rohe's architectural philosophy emphasized minimalist structures and open spaces, meticulously crafted to reveal the inherent beauty of materials and form. His work sought purity and clarity, demonstrating that true elegance arises from careful reduction and precise execution.</p>
+            <div class="example">
+                <h3>Ample Whitespace & Content Focus</h3>
+                <p>In web design, 'Less Is More' translates to maximizing content clarity through judicious use of whitespace and minimal elements. This reduces cognitive load and directs focus to essential information, reflecting **Clarity through Reduction**.</p>
+                <pre class="code-example"><code>
+&lt;div class="content-block"&gt;
+    &lt;p&gt;A concise paragraph focused on a single idea, surrounded by generous spacing to enhance readability.&lt;/p&gt;
+&lt;/div&gt;
+<!-- The lack of excessive borders or background allows the content to breathe. -->
+                </code></pre>
+            </div>
+        </section>
+
+        <section id="louis-sullivan">
+            <h2>Louis Sullivan: Form Follows Function</h2>
+            <blockquote>"It is the pervading law of all things organic and inorganic, of all things physical and metaphysical, of all things human and all things more than human, of all true manifestations of the head, of the heart, of the soul, that the life is recognizable in its expression, that form ever follows function. This is the law."</blockquote>
+            <p>Louis Sullivan, a pioneer of modern architecture, articulated the fundamental principle that the design of a building or object should primarily be determined by its purpose. This idea champions utility and efficiency over superficial embellishment, ensuring that every element contributes meaningfully to the overall function.</p>
+            <div class="example">
+                <h3>Semantic HTML & Purpose-Driven Components</h3>
+                <p>In web design, 'Form Follows Function' is perfectly embodied by **Semantic HTML**. Using elements like `&lt;nav&gt;`, `&lt;article&gt;`, or `&lt;button&gt;` for their intended purpose creates a logical, accessible, and maintainable structure. This ensures that the code's form directly communicates its function, prioritizing content and user experience over decorative wrappers.</p>
+                <pre class="code-example"><code>
+&lt;article class="product-feature"&gt;
+    &lt;h3&gt;Core Feature Title&lt;/h3&gt;
+    &lt;p&gt;This paragraph describes a single, distinct feature of a product or service. Its clarity is enhanced by its dedicated &lt;article&gt; container, which signals its self-contained nature.&lt;/p&gt;
+    &lt;a href="#details" class="button"&gt;Explore Details&lt;/a&gt;
+&lt;/article&gt;
+<!-- Each element here (article, h3, p, a/button) serves a clear, defined purpose. -->
+                </code></pre>
+            </div>
+        </section>
+
+        <section id="rams-ive">
+            <h2>Dieter Rams & Jony Ive: Less But Better</h2>
+            <blockquote>"Good design is as little design as possible." (Dieter Rams)</blockquote>
+            <p>Dieter Rams' "Ten Principles for Good Design" advocate for useful, understandable, unobtrusive, and aesthetically pleasing products. Jony Ive, deeply influenced by Rams, applied these tenets at Apple, championing intuitive, simple, and timeless designs that enhance the user experience through meticulous attention to detail and removal of all superfluous elements.</p>
+            <div class="example">
+                <h3>Instinctively Simple Interactions</h3>
+                <p>Rams' and Ive's philosophy of 'Less But Better' translates into web interfaces that are **Instinctively Simple**. Every interaction is clear, every component serves a precise need, and unnecessary visual elements are removed, leading to an intuitive and enduring user experience. This design focuses on enhancing utility through clarity and directness.</p>
+                <pre class="code-example"><code>
+&lt;label for="email-input"&gt;Email Address:&lt;/label&gt;
+&lt;input type="email" id="email-input" class="input" placeholder="your@example.com"&gt;
+<!-- A simple, clearly labeled input field with minimal styling for direct, unobtrusive user interaction. -->
+                </code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>A tribute to timeless design principles by <a href="https://github.com/mikel/less-is-more-ui">less-is-more-ui</a></p>
+    </footer>
+</body>
+</html>
