@@ -367,7 +367,31 @@ footer.main-footer {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--ui-text-dim);
-    margin-top: var(--space-2);
+}
+
+.footer-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: var(--space-4);
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.github-badge {
+    opacity: 0.6;
+    transition: opacity var(--ui-transition);
+    border: none !important; /* Override general footer a styles */
+    display: inline-flex;
+}
+
+.github-badge:hover {
+    opacity: 1;
+}
+
+.github-badge img {
+    height: 20px;
+    display: block;
 }
 
 /* Axioms & Case Studies */

@@ -39,12 +39,19 @@ Visit the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) 
 
 - `SKILL.md` – Main entry point and agent instructions.
 - `principles.md` – Core design philosophy (Mies, Sullivan, Rams).
+- `design-manifesto.md` – High-level goals and aesthetic standards.
 - `design-process.md` – Step-by-step method for minimal interface design.
 - `anti-patterns.md` – Visual friction to identify and remove.
 - `design-checklist.md` – Final UI quality verification.
-- `references/components.md` – Pattern library for buttons, inputs, and cards.
+- `style.css` – The core design system implementation.
+- `index.html` – The "Museum of the Essential" documentation and demo.
+- `references/`
+  - `axioms.md` – Foundational truths of minimal design.
+  - `case-studies.md` – Analysis of successful minimal interfaces.
+  - `components.md` – Pattern library for buttons, inputs, and cards.
+  - `tokens.css` – Design tokens and scale variables.
+- `evals/` – Performance benchmarks and evaluation sets.
 - `scripts/reset.css` – Tiny modernist reset for a clean start.
-- `examples/` – Basic implementation examples using variables.
 
 ## Philosophy
 
