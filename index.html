@@ -6,6 +6,7 @@
     <title>Museum of the Essential | Less Is More UI</title>
     <meta name="description" content="A tribute to minimalist design and its application in modern web interfaces.">
     <link rel="stylesheet" href="scripts/reset.css">
+    <link rel="stylesheet" href="references/tokens.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,146 +19,224 @@
             <a href="https://github.com/Mendiak/less-is-more-ui">less-is-more-ui</a>
         </nav>
         <h1>Museum of the Essential</h1>
-        <p class="subtitle">A curated exploration of clarity, function, and the beauty of reduction in digital design.</p>
+        <p class="subtitle">A design system for building calm, high-quality web interfaces. We use the principles of modernism to remove visual noise and focus on what truly matters: your content.</p>
+        
+        <nav class="index-nav">
+            <a href="#foundations">The Origins</a>
+            <a href="#methodology">The Way We Think</a>
+            <a href="#interface">How to Use It</a>
+        </nav>
     </header>
 
     <main>
-        <!-- Ludwig Mies van der Rohe -->
-        <article id="mies-van-der-rohe" class="designer-profile">
-            <header>
-                <span class="eyebrow">Architectural Purity</span>
-                <h2>Ludwig Mies van der Rohe</h2>
+        <!-- PILLAR: FOUNDATIONS -->
+        <section id="foundations" class="pillar">
+            <header class="pillar-header">
+                <span class="pillar-label">01</span>
+                <h2>The Origins</h2>
+                <p>Minimalism isn't just an aesthetic; it's a structural necessity. These are the classic ideas that taught us how to design with purpose.</p>
             </header>
-            
-            <section class="philosophy">
-                <blockquote>"Less is more."</blockquote>
-                <p>Mies van der Rohe's approach was one of total reduction. He believed that by stripping away the non-essential, one could reveal the inherent character of the materials and the true purpose of the space.</p>
-            </section>
 
-            <section class="application">
-                <div class="precept">
-                    <h3>Web Precept: Clarity through Reduction</h3>
-                    <p>In web interfaces, this translates to the removal of all decorative elements that do not contribute to the user's task. It is the art of letting the content speak for itself.</p>
-                </div>
+            <!-- Ludwig Mies van der Rohe -->
+            <article id="mies-van-der-rohe" class="designer-profile">
+                <header>
+                    <span class="eyebrow">The Architect</span>
+                    <h3>Ludwig Mies van der Rohe</h3>
+                </header>
                 
-                <div class="demo-box">
-                    <div class="content-block">
-                        <p>This is a focused content block. No borders, no shadows, no noise. Just pure typography and generous whitespace to guide the eye.</p>
+                <section class="philosophy">
+                    <blockquote>"Less is more."</blockquote>
+                    <p>Mies spent his career proving that stripping away decoration doesn't make a design "empty"—it makes it clearer. By focusing on essential materials and open space, he showed us how to reveal the true character of a project.</p>
+                </section>
+
+                <section class="application">
+                    <div class="precept">
+                        <h4>Design for the Web: Clarity over Decoration</h4>
+                        <p>In modern web development, this means removing every border, shadow, and icon that isn't helping the user complete their task. We let the typography and the whitespace do the work of guiding the eye.</p>
                     </div>
-                </div>
+                    
+                    <div class="demo-box">
+                        <div class="content-block">
+                            <p>This content block uses nothing but whitespace and a single vertical line to establish its presence. There are no shadows or borders to distract you from the text.</p>
+                        </div>
+                    </div>
 
-                <figure class="code-figure">
-                    <figcaption>The implementation of Miesian clarity:</figcaption>
-                    <pre class="code-example"><code>&lt;div class="content-block"&gt;
-    &lt;p&gt;Essential content only.&lt;/p&gt;
+                    <figure class="code-figure">
+                        <figcaption>Keep your HTML clean and your CSS focused:</figcaption>
+                        <pre class="code-example"><code>&lt;div class="content-block"&gt;
+    &lt;p&gt;Pure content. No noise.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-                </figure>
-            </section>
-        </article>
+                    </figure>
+                </section>
+            </article>
 
-        <!-- Louis Sullivan -->
-        <article id="louis-sullivan" class="designer-profile">
-            <header>
-                <span class="eyebrow">Functional Rationalism</span>
-                <h2>Louis Sullivan</h2>
-            </header>
+            <!-- Louis Sullivan -->
+            <article id="louis-sullivan" class="designer-profile">
+                <header>
+                    <span class="eyebrow">The Functionalist</span>
+                    <h3>Louis Sullivan</h3>
+                </header>
 
-            <section class="philosophy">
-                <blockquote>"Form follows function."</blockquote>
-                <p>Sullivan posited that the external shape of a building should be a direct reflection of its internal purpose. This principle shifted design from decoration to logic.</p>
-            </section>
+                <section class="philosophy">
+                    <blockquote>"Form follows function."</blockquote>
+                    <p>Sullivan believed that the shape of anything—a building, a tool, or a website—should come directly from what it's supposed to do. If a feature doesn't serve the user's goal, it shouldn't exist.</p>
+                </section>
 
-            <section class="application">
-                <div class="precept">
-                    <h3>Web Precept: Semantic Honest Materials</h3>
-                    <p>Web 'materials' are HTML elements. A button should be a <code>&lt;button&gt;</code>, a navigation should be a <code>&lt;nav&gt;</code>. Honesty in structure leads to accessible and robust design.</p>
-                </div>
+                <section class="application">
+                    <div class="precept">
+                        <h4>Honest Materials: Semantic Structure</h4>
+                        <p>Web 'materials' are HTML tags. An interactive element should be a <code>&lt;button&gt;</code>, not a div with an event listener. When we use the right tags for the right jobs, our code becomes simpler, more accessible, and easier to maintain.</p>
+                    </div>
 
-                <div class="demo-box">
-                    <nav class="functional-nav">
-                        <a href="#" class="button button--primary">Primary Action</a>
-                        <a href="#" class="button">Secondary</a>
-                    </nav>
-                </div>
+                    <div class="demo-box">
+                        <nav class="functional-nav">
+                            <a href="#" class="button button--primary">Take Action</a>
+                            <a href="#" class="button">Learn More</a>
+                        </nav>
+                    </div>
 
-                <figure class="code-figure">
-                    <figcaption>Semantic integrity in navigation:</figcaption>
-                    <pre class="code-example"><code>&lt;nav&gt;
+                    <figure class="code-figure">
+                        <figcaption>A button should look and act like a button:</figcaption>
+                        <pre class="code-example"><code>&lt;nav&gt;
     &lt;button class="primary"&gt;Action&lt;/button&gt;
     &lt;a href="..."&gt;Link&lt;/a&gt;
 &lt;/nav&gt;</code></pre>
-                </figure>
-            </section>
-        </article>
+                    </figure>
+                </section>
+            </article>
 
-        <!-- Dieter Rams & Jony Ive -->
-        <article id="rams-ive" class="designer-profile">
-            <header>
-                <span class="eyebrow">Systemic Intuition</span>
-                <h2>Dieter Rams & Jony Ive</h2>
-            </header>
+            <!-- Dieter Rams & Jony Ive -->
+            <article id="rams-ive" class="designer-profile">
+                <header>
+                    <span class="eyebrow">The Minimalists</span>
+                    <h3>Dieter Rams & Jony Ive</h3>
+                </header>
 
-            <section class="philosophy">
-                <blockquote>"Less but better."</blockquote>
-                <p>Rams' ten principles for good design emphasize that products should be useful, understandable, and as little design as possible. Ive brought this systemic simplicity to the digital age.</p>
-            </section>
+                <section class="philosophy">
+                    <blockquote>"Less but better."</blockquote>
+                    <p>Dieter Rams defined the principles of good design as being useful, understandable, and as subtle as possible. Jony Ive brought this systemic simplicity to the screens we use every day.</p>
+                </section>
 
-            <section class="application">
-                <div class="precept">
-                    <h3>Web Precept: Instinctively Simple</h3>
-                    <p>Interfaces should be so intuitive that they feel natural. This is achieved through consistent patterns, clear affordances, and the removal of visual friction.</p>
-                </div>
-
-                <div class="demo-box">
-                    <div class="input-group">
-                        <label for="search">Find what you need</label>
-                        <input type="text" id="search" class="input" placeholder="Search the museum...">
+                <section class="application">
+                    <div class="precept">
+                        <h4>Instinctive Design: Removing Friction</h4>
+                        <p>Great interfaces feel natural. We achieve this by using consistent patterns and removing anything that creates "visual friction." The goal is a design that requires no explanation.</p>
                     </div>
-                </div>
 
-                <figure class="code-figure">
-                    <figcaption>A clean, focused input pattern:</figcaption>
-                    <pre class="code-example"><code>&lt;label for="search"&gt;Search&lt;/label&gt;
-&lt;input type="text" id="search" class="input"&gt;</code></pre>
-                </figure>
-            </section>
-        </article>
-
-        <!-- AI Agent Integration -->
-        <article id="ai-integration" class="designer-profile">
-            <header>
-                <span class="eyebrow">Machine Intelligence</span>
-                <h2>AI Agent Integration</h2>
-            </header>
-
-            <section class="philosophy">
-                <blockquote>"Design is a rational process."</blockquote>
-                <p>For an AI agent, minimalism is not just an aesthetic choice, but a functional one. By reducing visual noise, we simplify the decision-making process for both the machine and the human user.</p>
-            </section>
-
-            <section class="application">
-                <div class="precept">
-                    <h3>Capability: Deterministic Design</h3>
-                    <p>This skill provides agents with a curated set of rules and references. It allows them to bypass the typical "generic" web look and instead produce high-intent, professional interfaces by following a strict design system.</p>
-                </div>
-
-                <div class="demo-box">
-                    <div class="installation-box">
-                        <div class="installation-header">
-                            <span class="label">Installation</span>
-                            <button class="copy-button" aria-label="Copy installation command">Copy</button>
+                    <div class="demo-box">
+                        <div class="input-group">
+                            <label for="search">What are you looking for?</label>
+                            <input type="text" id="search" class="input" placeholder="Search the collection...">
                         </div>
-                        <code>npx skills add Mendiak/less-is-more-ui</code>
                     </div>
-                </div>
 
-                <figure class="code-figure">
-                    <figcaption>How to invoke this design spirit:</figcaption>
-                    <pre class="code-example"><code>"Apply less-is-more-ui principles to this layout,
-prioritizing typography and removing all shadows."</code></pre>
-                </figure>
-            </section>
-        </article>
+                    <figure class="code-figure">
+                        <figcaption>Clear labels and focused inputs:</figcaption>
+                        <pre class="code-example"><code>&lt;label for="search"&gt;Search&lt;/label&gt;
+&lt;input type="text" id="search" class="input"&gt;</code></pre>
+                    </figure>
+                </section>
+            </article>
+        </section>
+
+        <!-- PILLAR: METHODOLOGY -->
+        <section id="methodology" class="pillar">
+            <header class="pillar-header">
+                <span class="pillar-label">02</span>
+                <h2>The Way We Think</h2>
+                <p>How we translate these classic principles into modern web design decisions.</p>
+            </header>
+
+            <!-- Axioms of the Essential -->
+            <article id="axioms" class="designer-profile">
+                <header>
+                    <span class="eyebrow">Our Framework</span>
+                    <h3>Axioms of the Essential</h3>
+                </header>
+
+                <section class="philosophy">
+                    <p>These are the universal rules we use to judge every design choice. We move beyond "style" and into the realm of architectural logic for the web.</p>
+                    <ul class="axiom-list">
+                        <li><strong>Justification:</strong> Every pixel must have a reason to be there.</li>
+                        <li><strong>Typographic Dominance:</strong> If the fonts are right, the interface is done.</li>
+                        <li><strong>Material Honesty:</strong> We don't pretend digital elements have physical depth.</li>
+                        <li><strong>The Silent Grid:</strong> We use alignment to create order, not lines or boxes.</li>
+                    </ul>
+                </section>
+
+                <section class="application">
+                    <div class="precept">
+                        <h4>Applying the Axioms to Real Problems</h4>
+                        <p>We use this framework to simplify complex scenarios—like a <strong>Silent Checkout</strong> that reduces user anxiety, or a <strong>Discovery Interface</strong> that puts the content ahead of the filters.</p>
+                    </div>
+
+                    <div class="comparison-grid">
+                        <div class="comparison-item">
+                            <span class="label">Checkout Concept</span>
+                            <div class="demo-box essential-demo">
+                                <div class="essential-card">
+                                    <h5>Your Account</h5>
+                                    <p class="status">Email address</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="label">Product Specs</span>
+                            <div class="demo-box essential-demo">
+                                <div class="essential-card">
+                                    <h5>Details</h5>
+                                    <p class="status">Essential Data Only</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </section>
+
+        <!-- PILLAR: INTERFACE -->
+        <section id="interface" class="pillar">
+            <header class="pillar-header">
+                <span class="pillar-label">03</span>
+                <h2>How to Use It</h2>
+                <p>This design philosophy is built directly into an AI-powered agent skill for developers.</p>
+            </header>
+
+            <!-- AI Agent Integration -->
+            <article id="ai-integration" class="designer-profile">
+                <header>
+                    <span class="eyebrow">For Developers</span>
+                    <h3>AI Agent Integration</h3>
+                </header>
+
+                <section class="philosophy">
+                    <p>Designing is a rational process, not a decorative one. For an AI agent, minimalism is a functional choice: by reducing visual noise, we simplify the experience for both the machine and the human user.</p>
+                </section>
+
+                <section class="application">
+                    <div class="precept">
+                        <h4>Getting Started</h4>
+                        <p>This skill provides your AI agent with a curated set of rules, references, and a custom design system. It allows you to skip the "generic" web look and build professional, focused interfaces by default.</p>
+                    </div>
+
+                    <div class="demo-box">
+                        <div class="installation-box">
+                            <div class="installation-header">
+                                <span class="label">Installation</span>
+                                <button class="copy-button" aria-label="Copy installation command">Copy</button>
+                            </div>
+                            <code>npx skills add Mendiak/less-is-more-ui</code>
+                        </div>
+                    </div>
+
+                    <figure class="code-figure">
+                        <figcaption>Talk to your agent like a design partner:</figcaption>
+                        <pre class="code-example"><code>"Apply the less-is-more-ui principles to this layout.
+Prioritize the typography and remove all the noise."</code></pre>
+                    </figure>
+                </section>
+            </article>
+        </section>
     </main>
 
     <footer class="main-footer">

@@ -1,0 +1,61 @@
+/**
+ * Essential Design System Tokens
+ * A purist foundation for minimalist web interfaces.
+ * Based on Axioms of the Essential.
+ */
+
+:root {
+    /* 1. Neutral Palette (The Perfect Gray Scale) */
+    --gray-0:   #000000;
+    --gray-10:  #1a1a1a; /* Essential Text */
+    --gray-40:  #444444; /* Paragraphs */
+    --gray-60:  #666666; /* Muted Text */
+    --gray-80:  #999999; /* Dimmed Text */
+    --gray-90:  #d1d1d1; /* Strong Borders */
+    --gray-94:  #eeeeee; /* Silent Borders */
+    --gray-97:  #fafafa; /* Surface Alt */
+    --gray-99:  #fcfcfc; /* Main Background */
+    --gray-100: #ffffff; /* Surface */
+
+    /* 2. Modular Typographic Scale (Major Third - 1.250) */
+    --step--2: 0.64rem;
+    --step--1: 0.8rem;
+    --step-0:  1rem;    /* Base (16px) */
+    --step-1:  1.25rem;
+    --step-2:  1.563rem;
+    --step-3:  1.953rem;
+    --step-4:  2.441rem;
+    --step-5:  3.052rem;
+    --step-6:  3.815rem;
+
+    /* 3. Spacing Scale (Base 8px / 0.5rem) */
+    --space-base: 0.5rem;
+    --space-1: calc(var(--space-base) * 1);  /* 8px */
+    --space-2: calc(var(--space-base) * 2);  /* 16px */
+    --space-3: calc(var(--space-base) * 3);  /* 24px */
+    --space-4: calc(var(--space-base) * 4);  /* 32px */
+    --space-6: calc(var(--space-base) * 6);  /* 48px */
+    --space-8: calc(var(--space-base) * 8);  /* 64px */
+    --space-12: calc(var(--space-base) * 12); /* 96px */
+    --space-16: calc(var(--space-base) * 16); /* 128px */
+
+    /* 4. Semantic Aliases (Axiom Alignment) */
+    --ui-bg: var(--gray-99);
+    --ui-text: var(--gray-10);
+    --ui-text-muted: var(--gray-60);
+    --ui-text-dim: var(--gray-80);
+    --ui-text-para: var(--gray-40);
+    
+    --ui-border-silent: var(--gray-94);
+    --ui-border-strong: var(--gray-90);
+    
+    --ui-surface: var(--gray-100);
+    --ui-surface-alt: var(--gray-97);
+    
+    --ui-font-sans: 'IBM Plex Sans', -apple-system, sans-serif;
+    --ui-font-serif: 'IBM Plex Serif', Georgia, serif;
+    --ui-font-mono: 'IBM Plex Mono', monospace;
+
+    --ui-radius: 2px;
+    --ui-transition: 0.2s ease;
+}

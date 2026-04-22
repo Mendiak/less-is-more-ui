@@ -2,64 +2,16 @@
   "skill_name": "less-is-more-ui",
   "evals": [
     {
-      "id": 0,
-      "name": "weather-dashboard",
-      "prompt": "Design a minimalist dashboard for a home weather station showing temperature, humidity, and 5-day forecast. Use the 'less-is-more-ui' skill principles.",
-      "expected_output": "A clean, functional weather dashboard with high whitespace, strong typography, and no decorative clutter.",
-      "assertions": [
-        {
-          "text": "The design uses strong typography to establish hierarchy.",
-          "type": "grader"
-        },
-        {
-          "text": "There are no unnecessary decorative elements like gradients or complex shadows.",
-          "type": "grader"
-        },
-        {
-          "text": "The layout is grid-based and maintains a clear vertical rhythm.",
-          "type": "grader"
-        }
-      ]
-    },
-    {
       "id": 1,
-      "name": "keyboard-landing-page",
-      "prompt": "Create a clean, modernist landing page for a new high-end mechanical keyboard called 'The Typewriter'. Focus on the 'less but better' philosophy.",
-      "expected_output": "A minimalist landing page with a clear hierarchy, subtle color palette, and focused content.",
-      "assertions": [
-        {
-          "text": "The landing page has a clear, singular call to action.",
-          "type": "grader"
-        },
-        {
-          "text": "The color palette is subtle and uses neutral tones.",
-          "type": "grader"
-        },
-        {
-          "text": "The content is focused and free of visual clutter.",
-          "type": "grader"
-        }
-      ]
+      "prompt": "Justify every element in a layout for a simple weather app (city, temperature, condition, humidity, wind speed) using the Axioms of the Essential. Then provide the minimal HTML/CSS.",
+      "expected_output": "The response should use the Axioms (e.g., Law of Justification) to explain why icons or decorative boxes are removed, prioritizing typographic hierarchy.",
+      "files": []
     },
     {
       "id": 2,
-      "name": "signup-form",
-      "prompt": "Design a simple, calm sign-up form for a professional photography portfolio service. Ensure form follows function and visual noise is minimized.",
-      "expected_output": "A calm, well-structured sign-up form with clear labels and a single primary action.",
-      "assertions": [
-        {
-          "text": "The form is simple and follows a single-column layout.",
-          "type": "grader"
-        },
-        {
-          "text": "The primary action is prominent and clear.",
-          "type": "grader"
-        },
-        {
-          "text": "There is generous whitespace between form elements.",
-          "type": "grader"
-        }
-      ]
+      "prompt": "Redesign a generic 'User Settings' dashboard. The original has many cards with shadows, a colorful sidebar, and redundant icons for each setting (Account, Privacy, Security, Notifications). Convert it to its Essential form.",
+      "expected_output": "The redesign should remove all shadows, simplify the sidebar to plain text links, and use whitespace/typography instead of cards to separate sections.",
+      "files": []
     }
   ]
 }
