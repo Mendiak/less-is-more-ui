@@ -55,3 +55,23 @@ h1 { font-size: 2.5rem; font-weight: 700; }
 h2 { font-size: 1.5rem; font-weight: 600; }
 p { font-size: 1rem; color: #333333; }
 ```
+
+## 5. Icons (Functional Symbols)
+Use icons only when they provide immediate clarity that text alone cannot. Follow a geometric, consistent style (like Lucide).
+
+- **Geometric:** Use thin, consistent stroke weights (e.g., 1.5px or 2px).
+- **Functional:** Never use icons as purely decorative elements.
+- **Subtle:** Icons should be smaller than or equal to the associated text size.
+
+```css
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  vertical-align: middle;
+}
+```

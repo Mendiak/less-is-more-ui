@@ -8,5 +8,6 @@ Before finalizing a UI, check the following:
 - Is there enough whitespace?
 - Are colors subtle and consistent?
 - Are decorative elements minimized?
+- **Are icons strictly functional and geometric?** (Remove if they are only decorative or redundant).
 
 If the interface feels crowded, simplify it.

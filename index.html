@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <header class="hero">
@@ -124,9 +125,12 @@
                     </div>
 
                     <div class="demo-box">
-                        <div class="input-group">
+                        <div class="input-group search-wrapper">
                             <label for="search">What are you looking for?</label>
-                            <input type="text" id="search" class="input" placeholder="Search the collection...">
+                            <div class="input-with-icon">
+                                <i data-lucide="search" class="icon icon--small"></i>
+                                <input type="text" id="search" class="input" placeholder="Search the collection...">
+                            </div>
                         </div>
                     </div>
 
@@ -222,8 +226,11 @@
                     <div class="demo-box">
                         <div class="installation-box">
                             <div class="installation-header">
-                                <span class="label">Installation</span>
-                                <button class="copy-button" aria-label="Copy installation command">Copy</button>
+                                <span class="label"><i data-lucide="terminal" class="icon icon--small"></i>Installation</span>
+                                <button class="copy-button" aria-label="Copy installation command">
+                                    <i data-lucide="copy" class="icon icon--small"></i>
+                                    <span class="button-text">Copy</span>
+                                </button>
                             </div>
                             <code>npx skills add Mendiak/less-is-more-ui</code>
                         </div>
@@ -253,19 +260,42 @@ Prioritize the typography and remove all the noise."</code></pre>
     </footer>
 
     <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
         document.querySelectorAll('.copy-button').forEach(button => {
             button.addEventListener('click', function() {
                 const box = this.closest('.installation-box');
                 const code = box.querySelector('code').innerText;
+                const textSpan = this.querySelector('.button-text');
+                const iconElement = this.querySelector('.icon');
                 
                 navigator.clipboard.writeText(code).then(() => {
-                    const originalText = this.innerText;
-                    this.innerText = 'Copied';
+                    const originalText = textSpan.innerText;
+                    textSpan.innerText = 'Copied';
                     this.classList.add('copied');
                     
+                    // Store original icon name
+                    const originalIconName = iconElement.getAttribute('data-lucide') || 'copy';
+                    
+                    // Create temporary <i> tag for Lucide to replace
+                    const tempIcon = document.createElement('i');
+                    tempIcon.setAttribute('data-lucide', 'check');
+                    tempIcon.className = 'icon icon--small';
+                    iconElement.replaceWith(tempIcon);
+                    lucide.createIcons();
+                    
                     setTimeout(() => {
-                        this.innerText = originalText;
+                        textSpan.innerText = originalText;
                         this.classList.remove('copied');
+                        
+                        // Revert icon
+                        const currentIcon = this.querySelector('.icon');
+                        const revertIcon = document.createElement('i');
+                        revertIcon.setAttribute('data-lucide', originalIconName);
+                        revertIcon.className = 'icon icon--small';
+                        currentIcon.replaceWith(revertIcon);
+                        lucide.createIcons();
                     }, 2000);
                 });
             });

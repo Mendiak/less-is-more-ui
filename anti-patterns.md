@@ -18,7 +18,8 @@ Avoid:
 Avoid:
 
 - too many cards
-- unnecessary icons
+- **Decorative icons:** Adding icons just to "fill" space or make it look "modern".
+- **Redundant icons:** Using an icon when the text is already clear (e.g., an icon of a home next to the word "Home" in a simple navbar).
 - multiple accent colors
 - decorative elements without purpose
 
