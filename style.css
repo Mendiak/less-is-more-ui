@@ -52,17 +52,19 @@ header.hero {
 h1 {
     font-size: var(--step-6);
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     margin: 0 0 var(--space-2) 0;
-    line-height: 1.1;
+    line-height: 1.05;
+    color: var(--ui-text);
 }
 
 .eyebrow {
     display: block;
-    font-size: var(--step--1);
-    font-weight: 700;
+    font-family: var(--ui-font-mono);
+    font-size: var(--step--2);
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     color: var(--ui-text-dim);
     margin-bottom: var(--space-1);
 }
@@ -70,16 +72,17 @@ h1 {
 .meta-nav {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-3);
     margin-bottom: var(--space-6);
     font-size: var(--step--1);
 }
 
 .meta-nav .label {
+    font-family: var(--ui-font-mono);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--ui-text-dim);
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .meta-nav a {
@@ -94,9 +97,10 @@ h1 {
 
 .subtitle {
     font-size: var(--step-2);
-    font-weight: 300;
+    font-weight: 400;
+    line-height: 1.4;
     color: var(--ui-text-muted);
-    max-width: 600px;
+    max-width: 50ch;
     margin: 0;
 }
 
@@ -123,16 +127,17 @@ main {
 }
 
 .pillar-header h2 {
-    font-size: var(--step-3);
+    font-size: var(--step-4);
     font-weight: 700;
     color: var(--ui-text);
     margin: 0 0 var(--space-1) 0;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
 }
 
 .pillar-header p {
     font-size: var(--step-1);
     color: var(--ui-text-muted);
+    max-width: 40ch;
     margin: 0;
 }
 
@@ -149,21 +154,22 @@ section {
 }
 
 h3 {
-    font-size: var(--step-2);
+    font-size: var(--step-3);
     font-weight: 700;
     color: var(--ui-text);
-    margin: 0 0 var(--space-3) 0;
-    letter-spacing: -0.01em;
+    margin: 0 0 var(--space-4) 0;
+    letter-spacing: -0.02em;
 }
 
 .precept {
     margin-bottom: var(--space-4);
 }
 
-.precept h4 {
+h4 {
     font-size: var(--step-1);
-    font-weight: 600;
-    margin-bottom: var(--space-1);
+    font-weight: 700;
+    margin: 0 0 var(--space-2) 0;
+    letter-spacing: -0.01em;
 }
 
 .content-block {
@@ -185,20 +191,20 @@ h3 {
 
 blockquote {
     font-family: var(--ui-font-serif);
-    font-size: var(--step-3);
-    line-height: 1.3;
+    font-size: var(--step-4);
+    line-height: 1.2;
     color: var(--ui-text);
-    margin: var(--space-6) 0;
+    margin: var(--space-8) 0;
     padding: 0;
     border: none;
-    font-style: normal;
+    font-style: italic;
 }
 
 p {
     font-size: var(--step-0);
     color: var(--ui-text-para);
-    margin: 0 0 var(--space-3) 0;
-    max-width: var(--max-width-content);
+    margin: 0 0 var(--space-4) 0;
+    max-width: 65ch;
 }
 
 .demo-box, 
@@ -452,44 +458,274 @@ footer.main-footer {
     margin-bottom: var(--space-2);
 }
 
+.comparison-header {
+    margin-bottom: var(--space-4);
+}
+
+.comparison-header h5 {
+    font-size: var(--step-1);
+    font-weight: 700;
+    margin: 0 0 var(--space-1) 0;
+    letter-spacing: -0.01em;
+    color: var(--ui-text);
+}
+
+.comparison-header p {
+    font-family: var(--ui-font-serif);
+    font-style: italic;
+    font-size: var(--step-0);
+    color: var(--ui-text-muted);
+    line-height: 1.4;
+    margin: 0;
+    max-width: 45ch;
+}
+
 .noisy-demo {
-    background-color: #f0f0f0;
+    background-color: #f5f5f5;
+    padding: var(--space-4);
+    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .noisy-card {
-    background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
-    padding: var(--space-3);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: #fff;
+    padding: var(--space-4);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     border: 1px solid #ddd;
     text-align: center;
+    width: 100%;
 }
 
-.noisy-card .icon {
-    font-size: 2rem;
+.noisy-button {
+    background: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: var(--space-2);
+    box-shadow: 0 4px 10px rgba(0, 242, 254, 0.3);
+    cursor: pointer;
+}
+
+/* Noisy Nav */
+.noisy-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    font-size: 11px;
+}
+
+.noisy-nav .logo {
+    font-weight: 900;
+    color: #ff416c;
+    margin-right: auto;
+}
+
+.noisy-nav a {
+    color: #666;
+    text-decoration: underline;
+}
+
+.noisy-nav .badge {
+    background: #ff416c;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 8px;
+    vertical-align: top;
+}
+
+.noisy-nav .search-bar {
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #aaa;
+}
+
+/* Essential Nav */
+.essential-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.essential-nav .logo {
+    font-weight: 700;
+    font-size: var(--step-0);
+    letter-spacing: -0.02em;
+}
+
+.essential-nav .links {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.essential-nav a {
+    text-decoration: none;
+    color: var(--ui-text-dim);
+    font-size: var(--step--1);
+    transition: color var(--ui-transition);
+}
+
+.essential-nav a:hover {
+    color: var(--ui-text);
+}
+
+/* Noisy Form */
+.noisy-form {
+    width: 100%;
+}
+
+.noisy-form label {
+    color: #333;
+    font-weight: bold;
+}
+
+.noisy-form .required {
+    color: red;
+}
+
+.noisy-input.error {
+    border: 2px solid red;
+    background: #fff5f5;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.error-msg {
+    color: red;
+    font-size: 10px;
+    font-weight: 900;
     display: block;
+    margin-top: 4px;
+}
+
+/* Essential Form */
+.essential-form {
+    width: 100%;
+}
+
+.essential-form label {
     margin-bottom: var(--space-1);
 }
 
-.noisy-card h5 {
-    font-size: var(--step-1);
-    margin: 0;
-    color: #333;
+.field-message {
+    font-size: var(--step--2);
+    color: var(--ui-text-dim);
+    font-style: italic;
+    margin-top: var(--space-1);
+    display: block;
 }
 
-.noisy-card p {
+/* Noisy Table */
+.noisy-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.noisy-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.noisy-table tr.odd { background: #fff; }
+.noisy-table tr.even { background: #f9f9f9; }
+
+/* Essential Specs */
+.essential-specs {
+    width: 100%;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--ui-border-silent);
+}
+
+.spec-row:last-child { border-bottom: none; }
+
+.spec-row span:first-child {
+    color: var(--ui-text-dim);
     font-size: var(--step--1);
-    margin: var(--space-1) 0 0 0;
-    color: #888;
+}
+
+.spec-row span:last-child {
+    font-weight: 600;
+    font-size: var(--step--1);
+    color: var(--ui-text);
+}
+
+/* Noisy Filters */
+.noisy-filters {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-chip {
+    padding: 6px 12px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    color: #666;
+}
+
+.filter-chip.active {
+    background: #4facfe;
+    color: white;
+    border-color: #4facfe;
+}
+
+/* Essential Filters */
+.essential-filters {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.essential-filters a {
+    text-decoration: none;
+    color: var(--ui-text-dim);
+    font-size: var(--step--1);
+    font-weight: 400;
+    transition: color var(--ui-transition);
+}
+
+.essential-filters a:hover {
+    color: var(--ui-text);
+}
+
+.essential-filters a.active {
+    color: var(--ui-text);
+    font-weight: 700;
+    border-bottom: 2px solid var(--ui-text);
 }
 
 .essential-demo {
     background-color: var(--ui-bg);
+    padding: var(--space-8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .essential-card {
-    padding: var(--space-3);
-    border: 1px solid var(--ui-border-silent);
+    padding: var(--space-4);
     background-color: var(--ui-surface);
 }
 
