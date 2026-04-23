@@ -53,22 +53,92 @@
     --ui-font-mono: 'JetBrains Mono', monospace;
 
     --ui-radius: 2px;
-    --ui-transition: 0.2s ease;
+    --ui-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* 5. Noisy Example Tokens (Default Light) */
+    --noisy-bg: #f5f5f5;
+    --noisy-text: #333;
+    --noisy-text-muted: #666;
+    --noisy-text-dim: #999;
+    --noisy-border: #ccc;
+    --noisy-card: #ffffff;
+    --noisy-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    --noisy-shadow-small: 0 2px 5px rgba(0,0,0,0.05);
+    --noisy-error-bg: #fff5f5;
+    --noisy-error-text: #333;
 }
 
+/* Theme Support: Automatic (System) and Manual (Toggle) */
 @media (prefers-color-scheme: dark) {
-    :root {
-        /* Swap Aliases for Dark Mode using Warm Grays */
+    :root:not([data-theme="light"]) {
         --ui-bg: var(--gray-0);
         --ui-text: var(--gray-99);
         --ui-text-muted: var(--gray-80);
         --ui-text-dim: var(--gray-80);
         --ui-text-para: var(--gray-90);
-        
         --ui-border-silent: var(--gray-10);
         --ui-border-strong: var(--gray-40);
-        
         --ui-surface: var(--gray-10);
-        --ui-surface-alt: var(--gray-0);
+        --ui-surface-alt: #121111; /* Slightly lighter than gray-0 */
+
+        /* Noisy Dark Overrides */
+        --noisy-bg: #121212;
+        --noisy-text: #eee;
+        --noisy-text-muted: #aaa;
+        --noisy-text-dim: #666;
+        --noisy-border: #333;
+        --noisy-card: #1e1e1e;
+        --noisy-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        --noisy-shadow-small: 0 2px 10px rgba(0,0,0,0.5);
+        --noisy-error-bg: #2a1010;
+        --noisy-error-text: #ffcccc;
     }
+}
+
+[data-theme="dark"] {
+    --ui-bg: var(--gray-0);
+    --ui-text: var(--gray-99);
+    --ui-text-muted: var(--gray-80);
+    --ui-text-dim: var(--gray-80);
+    --ui-text-para: var(--gray-90);
+    --ui-border-silent: var(--gray-10);
+    --ui-border-strong: var(--gray-40);
+    --ui-surface: var(--gray-10);
+    --ui-surface-alt: #121111;
+
+    /* Noisy Dark Overrides */
+    --noisy-bg: #121212;
+    --noisy-text: #eee;
+    --noisy-text-muted: #aaa;
+    --noisy-text-dim: #666;
+    --noisy-border: #333;
+    --noisy-card: #1e1e1e;
+    --noisy-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    --noisy-shadow-small: 0 2px 10px rgba(0,0,0,0.5);
+    --noisy-error-bg: #2a1010;
+    --noisy-error-text: #ffcccc;
+}
+
+[data-theme="light"] {
+    --ui-bg: var(--gray-99);
+    --ui-text: var(--gray-10);
+    --ui-text-muted: var(--gray-60);
+    --ui-text-dim: var(--gray-80);
+    --ui-text-para: var(--gray-40);
+    --ui-border-silent: var(--gray-95);
+    --ui-border-strong: var(--gray-90);
+    --ui-surface: var(--gray-99);
+    --ui-surface-alt: var(--gray-94); /* Distinct from bg */
+
+    /* Noisy Light Overrides */
+    --noisy-bg: #f5f5f5;
+    --noisy-text: #333;
+    --noisy-text-muted: #666;
+    --noisy-text-dim: #999;
+    --noisy-border: #ccc;
+    --noisy-card: #ffffff;
+    --noisy-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    --noisy-shadow-small: 0 2px 5px rgba(0,0,0,0.05);
+    --noisy-error-bg: #fff5f5;
+    --noisy-error-text: #333;
 }

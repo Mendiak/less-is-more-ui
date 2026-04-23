@@ -19,6 +19,10 @@
             <span class="label">Project</span>
             <a href="https://github.com/Mendiak/less-is-more-ui">less-is-more-ui</a>
         </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i data-lucide="sun" class="sun-icon"></i>
+            <i data-lucide="moon" class="moon-icon"></i>
+        </button>
         <h1>Museum of the Essential</h1>
         <p class="subtitle">A design system for building calm, high-quality web interfaces. We use the principles of modernism to remove visual noise and focus on what truly matters: your content.</p>
         
@@ -450,6 +454,27 @@ Prioritize the typography and remove all the noise."</code></pre>
         document.querySelectorAll('.pillar, .designer-profile, .comparison-item').forEach((el) => {
             el.classList.add('reveal-element');
             observer.observe(el);
+        });
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                theme = 'light';
+            } else if (theme === 'light') {
+                theme = 'dark';
+            } else {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
         });
     </script>
 </body>
