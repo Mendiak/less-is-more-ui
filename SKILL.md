@@ -40,11 +40,13 @@ Execute the "Sustractive Pass" on every output:
 
 ## Bundled Resources
 
-- `scripts/reset.css`: The mandatory modernist base for all CSS.
+- `assets/css/reset.css`: The mandatory modernist base for all CSS.
 - `references/tokens.css`: The Essential Design System tokens. **Always use these semantic variables instead of hardcoded hex values or generic units.**
 - `references/axioms.md`: The logical foundation for design decisions.
 - `references/case-studies.md`: Examples of noisy vs. essential patterns.
 - `references/components.md`: Minimalist code snippets using Essential tokens.
+- `docs/animations.md`: Standards for subtle, functional micro-interactions.
+- `docs/responsive.md`: How to handle smaller screens via reduction, not stacking.
 
 ## When to Use This Skill
 

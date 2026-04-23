@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Museum of the Essential | Less Is More UI</title>
     <meta name="description" content="A tribute to minimalist design and its application in modern web interfaces.">
-    <link rel="stylesheet" href="scripts/reset.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="references/tokens.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -91,8 +91,8 @@
 
                     <div class="demo-box">
                         <nav class="functional-nav">
-                            <a href="#" class="button button--primary">Take Action</a>
-                            <a href="#" class="button">Learn More</a>
+                            <a href="javascript:void(0)" class="button button--primary">Take Action</a>
+                            <a href="javascript:void(0)" class="button">Learn More</a>
                         </nav>
                     </div>
 
@@ -215,11 +215,11 @@
                             <div class="demo-box noisy-demo">
                                 <nav class="noisy-nav">
                                     <div class="logo">LOGO</div>
-                                    <a href="#">Home</a>
-                                    <a href="#">Products <span class="badge">New</span></a>
-                                    <a href="#">Services</a>
-                                    <a href="#">About</a>
-                                    <a href="#">Contact</a>
+                                    <a href="javascript:void(0)">Home</a>
+                                    <a href="javascript:void(0)">Products <span class="badge">New</span></a>
+                                    <a href="javascript:void(0)">Services</a>
+                                    <a href="javascript:void(0)">About</a>
+                                    <a href="javascript:void(0)">Contact</a>
                                     <div class="search-bar">Search...</div>
                                 </nav>
                             </div>
@@ -230,9 +230,9 @@
                                 <nav class="essential-nav">
                                     <div class="logo">Essential</div>
                                     <div class="links">
-                                        <a href="#">Work</a>
-                                        <a href="#">About</a>
-                                        <a href="#">Contact</a>
+                                        <a href="javascript:void(0)">Work</a>
+                                        <a href="javascript:void(0)">About</a>
+                                        <a href="javascript:void(0)">Contact</a>
                                     </div>
                                 </nav>
                             </div>
@@ -317,9 +317,9 @@
                             <span class="label">The Essential Way</span>
                             <div class="demo-box essential-demo">
                                 <div class="essential-filters">
-                                    <a href="#">All</a>
-                                    <a href="#" class="active">New</a>
-                                    <a href="#">Archived</a>
+                                    <a href="javascript:void(0)">All</a>
+                                    <a href="javascript:void(0)" class="active">New</a>
+                                    <a href="javascript:void(0)">Archived</a>
                                 </div>
                             </div>
                         </div>
@@ -429,6 +429,27 @@ Prioritize the typography and remove all the noise."</code></pre>
                     }, 2000);
                 });
             });
+        });
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.pillar, .designer-profile, .comparison-item').forEach((el) => {
+            el.classList.add('reveal-element');
+            observer.observe(el);
         });
     </script>
 </body>

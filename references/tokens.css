@@ -1,20 +1,14 @@
-/**
- * Essential Design System Tokens
- * A purist foundation for minimalist web interfaces.
- * Based on Axioms of the Essential.
- */
-
 :root {
-    /* 1. Neutral Palette (The Perfect Gray Scale) */
-    --gray-0:   #000000;
-    --gray-10:  #1a1a1a; /* Essential Text */
-    --gray-40:  #444444; /* Paragraphs */
-    --gray-60:  #666666; /* Muted Text */
-    --gray-80:  #999999; /* Dimmed Text */
-    --gray-90:  #d1d1d1; /* Strong Borders */
-    --gray-94:  #eeeeee; /* Silent Borders */
-    --gray-97:  #fafafa; /* Surface Alt */
-    --gray-99:  #fcfcfc; /* Main Background */
+    /* 1. Neutral Palette (Warm Grays) */
+    --gray-0:   #0f0e0e; /* Near Black Warm */
+    --gray-10:  #1c1a1a; /* Essential Text */
+    --gray-40:  #4a4545; /* Paragraphs */
+    --gray-60:  #6b6565; /* Muted Text */
+    --gray-80:  #9e9797; /* Dimmed Text */
+    --gray-90:  #d6cfcf; /* Strong Borders */
+    --gray-94:  #ede8e8; /* Silent Borders */
+    --gray-97:  #fcfafa; /* Surface Alt */
+    --gray-99:  #fffdfd; /* Main Background */
     --gray-100: #ffffff; /* Surface */
 
     /* 2. Modular Typographic Scale (Major Third - 1.250) */
@@ -38,8 +32,10 @@
     --space-8: calc(var(--space-base) * 8);  /* 64px */
     --space-12: calc(var(--space-base) * 12); /* 96px */
     --space-16: calc(var(--space-base) * 16); /* 128px */
+    --space-24: calc(var(--space-base) * 24); /* 192px */
+    --space-32: calc(var(--space-base) * 32); /* 256px */
 
-    /* 4. Semantic Aliases (Axiom Alignment) */
+    /* 4. Semantic Aliases (Light Mode Default) */
     --ui-bg: var(--gray-99);
     --ui-text: var(--gray-10);
     --ui-text-muted: var(--gray-60);
@@ -52,10 +48,27 @@
     --ui-surface: var(--gray-100);
     --ui-surface-alt: var(--gray-97);
     
-    --ui-font-sans: 'IBM Plex Sans', -apple-system, sans-serif;
-    --ui-font-serif: 'IBM Plex Serif', Georgia, serif;
-    --ui-font-mono: 'IBM Plex Mono', monospace;
+    --ui-font-sans: 'Inter', -apple-system, sans-serif;
+    --ui-font-serif: 'Playfair Display', Georgia, serif;
+    --ui-font-mono: 'JetBrains Mono', monospace;
 
     --ui-radius: 2px;
     --ui-transition: 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Swap Aliases for Dark Mode using Warm Grays */
+        --ui-bg: var(--gray-0);
+        --ui-text: var(--gray-99);
+        --ui-text-muted: var(--gray-80);
+        --ui-text-dim: var(--gray-80);
+        --ui-text-para: var(--gray-90);
+        
+        --ui-border-silent: var(--gray-10);
+        --ui-border-strong: var(--gray-40);
+        
+        --ui-surface: var(--gray-10);
+        --ui-surface-alt: var(--gray-0);
+    }
 }
