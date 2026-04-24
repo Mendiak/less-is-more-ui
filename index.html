@@ -25,25 +25,40 @@
         </button>
         <h1>Museum of the Essential</h1>
         <p class="subtitle">A design system for building calm, high-quality web interfaces. We use the principles of modernism to remove visual noise and focus on what truly matters: your content.</p>
-        
+
+        <div class="hero-stats">
+            <span><strong>6</strong> Axioms</span>
+            <span><strong>7</strong> Case Studies</span>
+            <span><strong>4</strong> Pillars</span>
+        </div>
+
         <nav class="index-nav">
             <a href="#foundations">The Origins</a>
             <a href="#methodology">The Way We Think</a>
+            <a href="#case-studies">Case Studies</a>
             <a href="#interface">How to Use It</a>
         </nav>
     </header>
+
+    <nav class="sticky-nav" id="sticky-nav" aria-label="Page sections">
+        <div class="sticky-nav-inner">
+            <a href="#foundations" class="sticky-nav-link" data-section="foundations">The Origins</a>
+            <a href="#methodology" class="sticky-nav-link" data-section="methodology">The Way We Think</a>
+            <a href="#case-studies" class="sticky-nav-link" data-section="case-studies">Case Studies</a>
+            <a href="#interface" class="sticky-nav-link" data-section="interface">How to Use It</a>
+        </div>
+    </nav>
 
     <main>
         <!-- PILLAR: FOUNDATIONS -->
         <section id="foundations" class="pillar">
             <header class="pillar-header">
-                <span class="pillar-label">01</span>
                 <h2>The Origins</h2>
                 <p>Minimalism isn't just an aesthetic; it's a structural necessity. These are the classic ideas that taught us how to design with purpose.</p>
             </header>
 
             <!-- Ludwig Mies van der Rohe -->
-            <article id="mies-van-der-rohe" class="designer-profile">
+            <article id="mies-van-der-rohe" class="designer-profile surface-subtle">
                 <header>
                     <span class="eyebrow">The Architect</span>
                     <h3>Ludwig Mies van der Rohe</h3>
@@ -76,7 +91,7 @@
             </article>
 
             <!-- Louis Sullivan -->
-            <article id="louis-sullivan" class="designer-profile">
+            <article id="louis-sullivan" class="designer-profile surface-subtle">
                 <header>
                     <span class="eyebrow">The Functionalist</span>
                     <h3>Louis Sullivan</h3>
@@ -111,7 +126,7 @@
             </article>
 
             <!-- Dieter Rams & Jony Ive -->
-            <article id="rams-ive" class="designer-profile">
+            <article id="rams-ive" class="designer-profile surface-subtle">
                 <header>
                     <span class="eyebrow">The Minimalists</span>
                     <h3>Dieter Rams & Jony Ive</h3>
@@ -150,40 +165,103 @@
         <!-- PILLAR: METHODOLOGY -->
         <section id="methodology" class="pillar">
             <header class="pillar-header">
-                <span class="pillar-label">02</span>
                 <h2>The Way We Think</h2>
                 <p>How we translate these classic principles into modern web design decisions.</p>
             </header>
 
             <!-- Axioms of the Essential -->
             <article id="axioms" class="designer-profile">
-                <header>
-                    <span class="eyebrow">Our Framework</span>
-                    <h3>Axioms of the Essential</h3>
-                </header>
+                <div class="surface-subtle">
+                    <header>
+                        <span class="eyebrow">Our Framework</span>
+                        <h3>Axioms of the Essential</h3>
+                    </header>
 
-                <section class="philosophy">
-                    <p>These are the universal rules we use to judge every design choice. We move beyond "style" and into the realm of architectural logic for the web.</p>
-                    <ul class="axiom-list">
-                        <li><strong>Justification:</strong> Every pixel must have a reason to be there.</li>
-                        <li><strong>Typographic Dominance:</strong> If the fonts are right, the interface is done.</li>
-                        <li><strong>Material Honesty:</strong> We don't pretend digital elements have physical depth.</li>
-                        <li><strong>The Silent Grid:</strong> We use alignment to create order, not lines or boxes.</li>
-                    </ul>
-                </section>
+                    <section class="philosophy">
+                        <p>These are the universal rules we use to judge every design choice. We move beyond "style" and into the realm of architectural logic for the web.</p>
+                        <ul class="axiom-list">
+                            <li><strong>Justification:</strong> Every pixel must have a reason to be there.</li>
+                            <li><strong>Typographic Dominance:</strong> If the fonts are right, the interface is done.</li>
+                            <li><strong>Material Honesty:</strong> We don't pretend digital elements have physical depth.</li>
+                            <li><strong>The Silent Grid:</strong> We use alignment to create order, not lines or boxes.</li>
+                            <li><strong>Proximity and Void:</strong> Whitespace is your most powerful structural tool. Use it actively to group, separate, and guide the eye.</li>
+                            <li><strong>Paradox of Choice:</strong> Limit options to increase clarity and intent. Fewer choices lead to better decisions and faster actions.</li>
+                        </ul>
+                    </section>
 
-                <section class="application">
-                    <div class="precept">
-                        <h4>Applying the Axioms to Real Problems</h4>
-                        <p>Minimalism is a functional choice. We use this framework to transform noisy, high-friction interfaces into calm, focused experiences.</p>
-                    </div>
+                    <section class="application">
+                        <div class="precept">
+                            <h4>All 6 Axioms in Practice</h4>
+                            <p>Axioms 1–4 are demonstrated through the designer profiles above: <strong>Justification</strong> and <strong>The Silent Grid</strong> through Mies van der Rohe, <strong>Material Honesty</strong> through Sullivan, <strong>Typographic Dominance</strong> through Rams &amp; Ive. The two remaining axioms require a direct visual comparison to be fully understood:</p>
+                        </div>
 
+                        <div class="axiom-demos">
+                            <div class="axiom-demo-item">
+                                <span class="eyebrow">Axiom 5 — Proximity and Void</span>
+                                <div class="void-demo-grid">
+                                    <div>
+                                        <span class="label">Cramped</span>
+                                        <div class="void-cramped">
+                                            <p>User name</p><p>mikel@example.com</p><p>Active account</p><p>Member since 2021</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="label">Essential</span>
+                                        <div class="void-essential">
+                                            <p class="void-name">Mikel Aramendia</p>
+                                            <p class="void-meta">mikel@example.com · Active · 2021</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="axiom-demo-item">
+                                <span class="eyebrow">Axiom 6 — Paradox of Choice</span>
+                                <div class="choice-demo-grid">
+                                    <div>
+                                        <span class="label">Too many options</span>
+                                        <div class="choice-noisy">
+                                            <a href="javascript:void(0)">Home</a>
+                                            <a href="javascript:void(0)">Products</a>
+                                            <a href="javascript:void(0)">Services</a>
+                                            <a href="javascript:void(0)">Blog</a>
+                                            <a href="javascript:void(0)">About</a>
+                                            <a href="javascript:void(0)">Team</a>
+                                            <a href="javascript:void(0)">Pricing</a>
+                                            <a href="javascript:void(0)">Contact</a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="label">Curated</span>
+                                        <div class="choice-essential">
+                                            <a href="javascript:void(0)" class="primary">Work</a>
+                                            <a href="javascript:void(0)">About</a>
+                                            <a href="javascript:void(0)">Contact</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </section>
+
+        <!-- PILLAR: CASE STUDIES -->
+        <section id="case-studies" class="pillar">
+            <header class="pillar-header">
+                <h2>Case Studies</h2>
+                <p>Seven real UI patterns, compared side by side. The noisy way versus the essential way — same content, radically different clarity.</p>
+            </header>
+
+            <div class="case-studies-grid">
                     <!-- Comparison 1: The Card -->
-                    <div class="comparison-header">
-                        <span class="eyebrow">Case Study 01</span>
-                        <h5>The Information Card</h5>
-                        <p>Reducing the container to amplify the content.</p>
-                    </div>
+                    <div class="surface-subtle">
+                        <div class="comparison-header">
+                            <span class="eyebrow">Case Study 01</span>
+                            <h5>The Information Card</h5>
+                            <p>Reducing the container to amplify the content.</p>
+                        </div>
                     <div class="comparison-grid">
                         <div class="comparison-item">
                             <span class="label">The Noisy Way</span>
@@ -200,148 +278,270 @@
                             <span class="label">The Essential Way</span>
                             <div class="demo-box essential-demo">
                                 <div class="essential-card">
-                                    <h5>Project Alpha</h5>
                                     <p class="status">Active</p>
+                                    <h5>Project Alpha</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    </div>
 
                     <!-- Comparison 2: Navigation -->
-                    <div class="comparison-header" style="margin-top: var(--space-8);">
-                        <span class="eyebrow">Case Study 02</span>
-                        <h5>Global Navigation</h5>
-                        <p>Curation over decoration. Utility over distraction.</p>
-                    </div>
-                    <div class="comparison-grid">
-                        <div class="comparison-item">
-                            <span class="label">The Noisy Way</span>
-                            <div class="demo-box noisy-demo">
-                                <nav class="noisy-nav">
-                                    <div class="logo">LOGO</div>
-                                    <a href="javascript:void(0)">Home</a>
-                                    <a href="javascript:void(0)">Products <span class="badge">New</span></a>
-                                    <a href="javascript:void(0)">Services</a>
-                                    <a href="javascript:void(0)">About</a>
-                                    <a href="javascript:void(0)">Contact</a>
-                                    <div class="search-bar">Search...</div>
-                                </nav>
-                            </div>
+                    <div class="surface-subtle">
+                        <div class="comparison-header">
+                            <span class="eyebrow">Case Study 02</span>
+                            <h5>Global Navigation</h5>
+                            <p>Curation over decoration. Utility over distraction.</p>
                         </div>
-                        <div class="comparison-item">
-                            <span class="label">The Essential Way</span>
-                            <div class="demo-box essential-demo">
-                                <nav class="essential-nav">
-                                    <div class="logo">Essential</div>
-                                    <div class="links">
-                                        <a href="javascript:void(0)">Work</a>
+                        <div class="comparison-grid">
+                            <div class="comparison-item">
+                                <span class="label">The Noisy Way</span>
+                                <div class="demo-box noisy-demo">
+                                    <nav class="noisy-nav">
+                                        <div class="logo">LOGO</div>
+                                        <a href="javascript:void(0)">Home</a>
+                                        <a href="javascript:void(0)">Products <span class="badge">New</span></a>
+                                        <a href="javascript:void(0)">Services</a>
                                         <a href="javascript:void(0)">About</a>
                                         <a href="javascript:void(0)">Contact</a>
-                                    </div>
-                                </nav>
+                                        <div class="search-bar">Search...</div>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="label">The Essential Way</span>
+                                <div class="demo-box essential-demo">
+                                    <nav class="essential-nav">
+                                        <div class="links">
+                                            <a href="javascript:void(0)">Work</a>
+                                            <a href="javascript:void(0)">About</a>
+                                            <a href="javascript:void(0)">Contact</a>
+                                        </div>
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Comparison 3: Checkout -->
-                    <div class="comparison-header" style="margin-top: var(--space-8);">
-                        <span class="eyebrow">Case Study 03</span>
-                        <h5>The Silent Checkout</h5>
-                        <p>Removing anxiety through typographic clarity.</p>
-                    </div>
-                    <div class="comparison-grid">
-                        <div class="comparison-item">
-                            <span class="label">The Noisy Way</span>
-                            <div class="demo-box noisy-demo">
-                                <div class="noisy-form">
-                                    <label>Email Address <span class="required">*</span></label>
-                                    <input type="text" value="invalid-email" class="noisy-input error">
-                                    <span class="error-msg">⚠️ CRITICAL ERROR: INVALID EMAIL FORMAT</span>
+                    <div class="surface-subtle">
+                        <div class="comparison-header">
+                            <span class="eyebrow">Case Study 03</span>
+                            <h5>The Silent Checkout</h5>
+                            <p>Removing anxiety through typographic clarity.</p>
+                        </div>
+                        <div class="comparison-grid">
+                            <div class="comparison-item">
+                                <span class="label">The Noisy Way</span>
+                                <div class="demo-box noisy-demo">
+                                    <div class="noisy-form">
+                                        <label>Email Address <span class="required">*</span></label>
+                                        <input type="text" value="invalid-email" class="noisy-input error">
+                                        <span class="error-msg">⚠️ CRITICAL ERROR: INVALID EMAIL FORMAT</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="comparison-item">
-                            <span class="label">The Essential Way</span>
-                            <div class="demo-box essential-demo">
-                                <div class="essential-form">
-                                    <label>Email Address</label>
-                                    <input type="text" value="invalid-email" class="input">
-                                    <span class="field-message">Please enter a valid email.</span>
+                            <div class="comparison-item">
+                                <span class="label">The Essential Way</span>
+                                <div class="demo-box essential-demo">
+                                    <div class="essential-form">
+                                        <label>Email Address</label>
+                                        <input type="text" value="invalid-email" class="input">
+                                        <span class="field-message">Please enter a valid email.</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Comparison 4: Product Specifications -->
-                    <div class="comparison-header" style="margin-top: var(--space-8);">
-                        <span class="eyebrow">Case Study 04</span>
-                        <h5>Product Specifications</h5>
-                        <p>Using alignment and typography to create structure without borders.</p>
-                    </div>
-                    <div class="comparison-grid">
-                        <div class="comparison-item">
-                            <span class="label">The Noisy Way</span>
-                            <div class="demo-box noisy-demo">
-                                <table class="noisy-table">
-                                    <tr class="odd"><td>Weight</td><td>1.2kg</td></tr>
-                                    <tr class="even"><td>Size</td><td>240mm</td></tr>
-                                    <tr class="odd"><td>Color</td><td>Graphite</td></tr>
-                                </table>
-                            </div>
+                    <div class="surface-subtle">
+                        <div class="comparison-header">
+                            <span class="eyebrow">Case Study 04</span>
+                            <h5>Product Specifications</h5>
+                            <p>Using alignment and typography to create structure without borders.</p>
                         </div>
-                        <div class="comparison-item">
-                            <span class="label">The Essential Way</span>
-                            <div class="demo-box essential-demo">
-                                <div class="essential-specs">
-                                    <div class="spec-row"><span>Weight</span><span>1.2kg</span></div>
-                                    <div class="spec-row"><span>Size</span><span>240mm</span></div>
-                                    <div class="spec-row"><span>Color</span><span>Graphite</span></div>
+                        <div class="comparison-grid">
+                            <div class="comparison-item">
+                                <span class="label">The Noisy Way</span>
+                                <div class="demo-box noisy-demo">
+                                    <table class="noisy-table">
+                                        <tr class="odd"><td>Weight</td><td>1.2kg</td></tr>
+                                        <tr class="even"><td>Size</td><td>240mm</td></tr>
+                                        <tr class="odd"><td>Color</td><td>Graphite</td></tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="label">The Essential Way</span>
+                                <div class="demo-box essential-demo">
+                                    <div class="essential-specs">
+                                        <div class="spec-row"><span>Weight</span><span>1.2kg</span></div>
+                                        <div class="spec-row"><span>Size</span><span>240mm</span></div>
+                                        <div class="spec-row"><span>Color</span><span>Graphite</span></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Comparison 5: Search & Discovery -->
-                    <div class="comparison-header" style="margin-top: var(--space-8);">
-                        <span class="eyebrow">Case Study 05</span>
-                        <h5>Search & Discovery</h5>
-                        <p>Filtering as a thought process, not a technical operation.</p>
-                    </div>
-                    <div class="comparison-grid">
-                        <div class="comparison-item">
-                            <span class="label">The Noisy Way</span>
-                            <div class="demo-box noisy-demo">
-                                <div class="noisy-filters">
-                                    <div class="filter-chip">All Categories <i data-lucide="chevron-down" class="icon icon--small"></i></div>
-                                    <div class="filter-chip active">New Items <i data-lucide="x" class="icon icon--small"></i></div>
+                    <div class="surface-subtle">
+                        <div class="comparison-header">
+                            <span class="eyebrow">Case Study 05</span>
+                            <h5>Search & Discovery</h5>
+                            <p>Filtering as a thought process, not a technical operation.</p>
+                        </div>
+                        <div class="comparison-grid">
+                            <div class="comparison-item">
+                                <span class="label">The Noisy Way</span>
+                                <div class="demo-box noisy-demo">
+                                    <div class="noisy-filters">
+                                        <div class="filter-chip">All Categories <i data-lucide="chevron-down" class="icon icon--small"></i></div>
+                                        <div class="filter-chip active">New Items <i data-lucide="x" class="icon icon--small"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="label">The Essential Way</span>
+                                <div class="demo-box essential-demo">
+                                    <div class="essential-filters">
+                                        <a href="javascript:void(0)">All</a>
+                                        <a href="javascript:void(0)" class="active">New</a>
+                                        <a href="javascript:void(0)">Archived</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="comparison-item">
-                            <span class="label">The Essential Way</span>
-                            <div class="demo-box essential-demo">
-                                <div class="essential-filters">
-                                    <a href="javascript:void(0)">All</a>
-                                    <a href="javascript:void(0)" class="active">New</a>
-                                    <a href="javascript:void(0)">Archived</a>
+                    </div>
+
+                    <!-- Comparison 6: Purposeful Animation -->
+                    <div class="surface-subtle">
+                        <div class="comparison-header">
+                            <span class="eyebrow">Case Study 06</span>
+                            <h5>Purposeful Animation</h5>
+                            <p>Motion should confirm an action, not decorate a page. Hover both buttons.</p>
+                        </div>
+                        <div class="comparison-grid">
+                            <div class="comparison-item">
+                                <span class="label">The Noisy Way</span>
+                                <div class="demo-box noisy-demo">
+                                    <div style="display:flex; flex-direction:column; align-items:center; gap: 12px;">
+                                        <button class="noisy-copy">
+                                            <i data-lucide="copy" class="icon icon--small"></i>
+                                            Copy Command
+                                        </button>
+                                        <span style="font-size: 0.75rem; opacity: 0.6;">Bounces & glows on hover — always</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="label">The Essential Way</span>
+                                <div class="demo-box essential-demo">
+                                    <div style="display:flex; flex-direction:column; align-items:center; gap: 12px;">
+                                        <button class="essential-copy" id="demo-copy-btn">
+                                            <i data-lucide="copy" class="icon icon--small" id="demo-copy-icon"></i>
+                                            <span id="demo-copy-text">Copy Command</span>
+                                        </button>
+                                        <span style="font-size: 0.75rem; opacity: 0.6;">Only animates to confirm the action</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </article>
+
+                    <!-- Comparison 7: Color Restraint -->
+                    <div class="surface-subtle">
+                        <div class="comparison-header">
+                            <span class="eyebrow">Case Study 07</span>
+                            <h5>Color Restraint</h5>
+                            <p>Color as semantic signal, not decoration. One accent color, used only to communicate state.</p>
+                        </div>
+                        <div class="comparison-grid">
+                            <div class="comparison-item">
+                                <span class="label">The Noisy Way</span>
+                                <div class="demo-box noisy-demo">
+                                    <div class="color-noisy-ui">
+                                        <div class="color-noisy-header">Dashboard Overview</div>
+                                        <div class="color-noisy-body">
+                                            <span class="color-noisy-badge new">New</span>
+                                            <span class="color-noisy-badge sale">Sale</span>
+                                            <span class="color-noisy-badge hot">Hot</span>
+                                            <span class="color-noisy-badge info">Info</span>
+                                            <br><br>
+                                            <button class="color-noisy-btn">View All Items</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="label">The Essential Way</span>
+                                <div class="demo-box essential-demo">
+                                    <div class="color-essential-ui">
+                                        <p class="color-essential-header">Dashboard</p>
+                                        <div class="spec-row">
+                                            <span>New items</span>
+                                            <span class="color-essential-accent">12</span>
+                                        </div>
+                                        <div class="spec-row">
+                                            <span>Active sales</span>
+                                            <span>3</span>
+                                        </div>
+                                        <div class="spec-row">
+                                            <span>Status</span>
+                                            <span>Nominal</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
         </section>
 
         <!-- PILLAR: INTERFACE -->
         <section id="interface" class="pillar">
             <header class="pillar-header">
-                <span class="pillar-label">03</span>
                 <h2>How to Use It</h2>
                 <p>This design philosophy is built directly into an AI-powered agent skill for developers.</p>
             </header>
 
+            <!-- The Substractive Pass -->
+            <article id="substractive-pass" class="designer-profile">
+                <div class="surface-subtle">
+                    <header>
+                        <span class="eyebrow">The Method</span>
+                        <h3>The Substractive Pass</h3>
+                    </header>
+                    <section class="philosophy">
+                        <p>Before finalizing any interface, run this three-step process. It is not a style guide — it is a quality filter that transforms functional layouts into essential ones.</p>
+                    </section>
+                </div>
+                <section class="application">
+                    <div class="substractive-steps">
+                        <div class="substractive-step">
+                            <span class="step-number">01 — Identify</span>
+                            <h5>Find the Noise</h5>
+                            <p>Scan for shadows, decorative gradients, redundant icons, unnecessary borders, and anything that exists for visual richness rather than function.</p>
+                        </div>
+                        <div class="substractive-arrow">→</div>
+                        <div class="substractive-step">
+                            <span class="step-number">02 — Remove</span>
+                            <h5>Delete &amp; Re-evaluate</h5>
+                            <p>Remove each noisy element. If the interface still communicates the same information, the element was unnecessary. Leave it out.</p>
+                        </div>
+                        <div class="substractive-arrow">→</div>
+                        <div class="substractive-step">
+                            <span class="step-number">03 — Refine</span>
+                            <h5>Restore with Type &amp; Space</h5>
+                            <p>Compensate for the removed noise by improving typographic hierarchy, line-height, letter-spacing, and whitespace. Structure through rhythm.</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
             <!-- AI Agent Integration -->
-            <article id="ai-integration" class="designer-profile">
+            <article id="ai-integration" class="designer-profile surface-subtle">
                 <header>
                     <span class="eyebrow">For Developers</span>
                     <h3>AI Agent Integration</h3>
@@ -357,7 +557,7 @@
                         <p>This skill provides your AI agent with a curated set of rules, references, and a custom design system. It allows you to skip the "generic" web look and build professional, focused interfaces by default.</p>
                     </div>
 
-                    <div class="demo-box">
+                    <div class="demo-box no-border">
                         <div class="installation-box">
                             <div class="installation-header">
                                 <span class="label"><i data-lucide="terminal" class="icon icon--small"></i>Installation</span>
@@ -434,6 +634,69 @@ Prioritize the typography and remove all the noise."</code></pre>
                 });
             });
         });
+
+        // Demo: Purposeful Animation (Case Study 06)
+        const demoCopyBtn = document.getElementById('demo-copy-btn');
+        if (demoCopyBtn) {
+            demoCopyBtn.addEventListener('click', function() {
+                const textSpan = document.getElementById('demo-copy-text');
+                const iconEl = document.getElementById('demo-copy-icon');
+
+                // Swap icon to check
+                const checkIcon = document.createElement('i');
+                checkIcon.setAttribute('data-lucide', 'check');
+                checkIcon.className = 'icon icon--small';
+                iconEl.replaceWith(checkIcon);
+                lucide.createIcons();
+
+                textSpan.textContent = 'Copied!';
+                demoCopyBtn.classList.add('confirmed');
+
+                setTimeout(() => {
+                    // Revert
+                    const copyIcon = document.createElement('i');
+                    copyIcon.setAttribute('data-lucide', 'copy');
+                    copyIcon.id = 'demo-copy-icon';
+                    copyIcon.className = 'icon icon--small';
+                    demoCopyBtn.querySelector('[data-lucide]').replaceWith(copyIcon);
+                    lucide.createIcons();
+
+                    textSpan.textContent = 'Copy Command';
+                    demoCopyBtn.classList.remove('confirmed');
+                }, 2000);
+            });
+        }
+
+        // Sticky Navigation
+        const stickyNav = document.getElementById('sticky-nav');
+        const heroSection = document.querySelector('header.hero');
+        const pillars = document.querySelectorAll('.pillar');
+        const stickyLinks = document.querySelectorAll('.sticky-nav-link');
+
+        // Show/hide sticky nav based on hero visibility
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    stickyNav.classList.add('is-visible');
+                } else {
+                    stickyNav.classList.remove('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        heroObserver.observe(heroSection);
+
+        // Scroll spy: highlight active section
+        const spyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    stickyLinks.forEach(link => {
+                        link.classList.toggle('is-active', link.dataset.section === id);
+                    });
+                }
+            });
+        }, { threshold: 0.3, rootMargin: '-44px 0px -40% 0px' });
+        pillars.forEach(p => spyObserver.observe(p));
 
         // Scroll Reveal Animation
         const observerOptions = {
