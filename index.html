@@ -18,13 +18,17 @@
         <nav class="meta-nav">
             <span class="label">Project</span>
             <a href="https://github.com/Mendiak/less-is-more-ui">less-is-more-ui</a>
+            <span class="divider">/</span>
+            <span class="label">Type</span>
+            <span class="value">AI Agent Skill</span>
         </nav>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
             <i data-lucide="sun" class="sun-icon"></i>
             <i data-lucide="moon" class="moon-icon"></i>
         </button>
+        <span class="eyebrow">AI Agent Skill</span>
         <h1>Museum of the Essential</h1>
-        <p class="subtitle">A design system for building calm, high-quality web interfaces. We use the principles of modernism to remove visual noise and focus on what truly matters: your content.</p>
+        <p class="subtitle">A specialized design system for AI agents to build calm, high-quality web interfaces. We use the principles of modernism to remove visual noise and focus on what truly matters: the user's content.</p>
 
         <div class="hero-stats">
             <span><strong>6</strong> Axioms</span>
@@ -701,8 +705,8 @@ Prioritize the typography and remove all the noise."</code></pre>
         // Scroll Reveal Animation
         const observerOptions = {
             root: null,
-            rootMargin: '0px',
-            threshold: 0.1
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.05
         };
 
         const observer = new IntersectionObserver((entries, observer) => {
@@ -714,7 +718,7 @@ Prioritize the typography and remove all the noise."</code></pre>
             });
         }, observerOptions);
 
-        document.querySelectorAll('.pillar, .designer-profile, .comparison-item').forEach((el) => {
+        document.querySelectorAll('.pillar, .designer-profile, .comparison-item, .surface-subtle').forEach((el) => {
             el.classList.add('reveal-element');
             observer.observe(el);
         });

@@ -121,6 +121,16 @@ h1 {
     font-weight: 400;
 }
 
+.meta-nav .value {
+    font-weight: 600;
+    color: var(--ui-text);
+}
+
+.meta-nav .divider {
+    color: var(--ui-border-silent);
+    user-select: none;
+}
+
 .meta-nav a {
     color: var(--ui-text);
     text-decoration: none;
