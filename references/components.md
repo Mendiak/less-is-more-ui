@@ -13,33 +13,34 @@ Avoid gradients and heavy shadows. Use border, background, and padding for clari
 ```css
 .button {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: var(--space-2) var(--space-3);
   font-family: inherit;
-  font-size: 1rem;
+  font-size: var(--step-0);
   text-decoration: none;
   cursor: pointer;
   transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
 }
 
 .button--primary { 
-  background-color: #1a1a1a; 
-  border: 1px solid #1a1a1a;
-  color: #fff; 
+  background-color: var(--ui-text);
+  border: 1px solid var(--ui-text);
+  color: var(--ui-bg);
 }
 
 .button--primary:hover { 
-  background-color: #333333; 
+  background-color: var(--ui-text-para);
+  border-color: var(--ui-text-para);
 }
 
 .button--secondary {
   background-color: transparent;
-  border: 1px solid #d1d1d1;
-  color: #1a1a1a;
+  border: 1px solid var(--ui-border-strong);
+  color: var(--ui-text);
 }
 
 .button--secondary:hover {
-  border-color: #1a1a1a;
-  background-color: #f9f9f9;
+  border-color: var(--ui-text);
+  background-color: var(--ui-surface-alt);
 }
 ```
 
@@ -55,29 +56,29 @@ Clear borders and generous spacing. Focus states must be accessible but not glow
 
 ```css
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-3);
 }
 
 .label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-1);
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--ui-text);
 }
 
 .input {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #d1d1d1;
-  background: #fff;
+  padding: var(--space-2);
+  border: 1px solid var(--ui-border-strong);
+  background: var(--ui-surface);
   font-family: inherit;
-  font-size: 1rem;
+  font-size: var(--step-0);
   transition: border-color 150ms ease;
 }
 
 .input:focus {
   outline: none;
-  border-color: #1a1a1a;
+  border-color: var(--ui-text);
 }
 ```
 
@@ -96,22 +97,22 @@ Use subtle borders or background shifts. Avoid "floating" cards with large shado
 
 ```css
 .card {
-  padding: 2rem;
-  border: 1px solid #e5e5e5;
-  background-color: #ffffff;
+  padding: var(--space-4);
+  border: 1px solid var(--ui-border-silent);
+  background-color: var(--ui-surface);
   /* NO box-shadow used to maintain flatness and simplicity */
 }
 
 .card-title {
   margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+  margin-bottom: var(--space-2);
+  font-size: var(--step-1);
   font-weight: 600;
 }
 
 .card-text {
-  color: #555555;
-  margin-bottom: 1.5rem;
+  color: var(--ui-text-para);
+  margin-bottom: var(--space-3);
 }
 ```
 
@@ -119,9 +120,9 @@ Use subtle borders or background shifts. Avoid "floating" cards with large shado
 Use size and weight, not color, to separate information.
 
 ```css
-h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: #111; }
-h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: #111; }
-p { font-size: 1rem; color: #444; line-height: 1.6; }
+h1 { font-size: var(--step-5); font-weight: 700; margin-bottom: var(--space-3); color: var(--ui-text); }
+h2 { font-size: var(--step-2); font-weight: 600; margin-bottom: var(--space-2); color: var(--ui-text); }
+p { font-size: var(--step-0); color: var(--ui-text-para); line-height: 1.6; }
 ```
 
 ## 5. Icons (Functional Symbols)

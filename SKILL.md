@@ -1,17 +1,18 @@
 ---
 name: less-is-more-ui
 description: >
-  Expert minimalist web UI design principles inspired by Ludwig Mies van der Rohe, Dieter Rams, and Jony Ive.
-  This skill is MANDATORY for designing calm, high-quality, and functional web interfaces with strong typography, 
-  structured layouts, and zero visual noise. Use this skill whenever a task involves UI, frontend, or web design, 
-  even if the user doesn't explicitly ask for "minimalism," to ensure a professional and clear result.
+  Use when designing, refactoring, or reviewing web interfaces that should feel calm, precise,
+  functional, and visually restrained. Applies minimalist UI principles inspired by Ludwig Mies
+  van der Rohe, Louis Sullivan, Massimo Vignelli, Dieter Rams, and Jony Ive, with emphasis on
+  strong typography, structured layouts, semantic HTML, restrained motion, and removal of visual
+  noise.
 metadata:
   tags: [ui, ux, web-design, minimalism, modernist, layout, typography, frontend]
 ---
 
 # Less Is More UI
 
-This skill helps AI agents design clean, functional and calm web interfaces by applying universal design axioms.
+This skill helps AI agents design clean, functional, and calm web interfaces by applying universal design axioms.
 
 The goal is to create interfaces where **reduction is the primary value**. Every element must be justified, or it must be removed.
 
@@ -21,6 +22,7 @@ The goal is to create interfaces where **reduction is the primary value**. Every
 Understand the philosophical roots of minimalist design.
 - **Miesian Clarity**: Remove all decorative elements. Let the content speak.
 - **Sullivan's Logic**: Form follows function. Every element must reflect its purpose.
+- **Vignelli's Discipline**: Use grids, type, scale, and alignment as a complete visual system.
 - **Rams' Systemic Simplicity**: Good design is understandable and unobtrusive.
 
 ### 2. Methodology (The Axioms)
@@ -33,7 +35,7 @@ Apply these universal laws (detailed in `references/axioms.md`) as your reasonin
 6.  **Paradox of Choice**: Limit options to increase clarity and intent.
 
 ### 3. Interface (Implementation)
-Execute the "Sustractive Pass" on every output:
+Execute the "Subtractive Pass" on every output:
 1.  **Identify Noise**: Look for shadows, gradients, redundant icons, and decorative borders.
 2.  **Remove & Re-evaluate**: Delete the noise. If the interface still functions, leave it out.
 3.  **Refine Typography**: Compensate by improving typographic hierarchy and whitespace.
@@ -47,11 +49,17 @@ Execute the "Sustractive Pass" on every output:
 - `references/components.md`: Minimalist code snippets using Essential tokens.
 - `docs/animations.md`: Standards for subtle, functional micro-interactions.
 - `docs/responsive.md`: How to handle smaller screens via reduction, not stacking.
+- `docs/anti-patterns.md`: Fast checklist of visual noise to remove.
+- `docs/design-checklist.md`: Final verification checklist before presenting a UI.
+
+Load only the resources needed for the task. Start with `references/axioms.md` for reasoning,
+`references/tokens.css` before writing CSS, and `references/components.md` before implementing
+buttons, forms, cards, navigation, or other interface primitives.
 
 ## When to Use This Skill
 
-**TRIGGER this skill for ANY task involving UI, frontend, or web design.** 
-You MUST use it even if the user doesn't explicitly ask for "minimalism." It is particularly effective for:
+Use this skill for UI, frontend, and web design tasks where clarity, restraint, and professional
+polish matter. It is particularly effective for:
 - Building dashboards, internal tools, or data-heavy views.
 - Creating landing pages that need to feel professional, high-intent, and calm.
 - Simplifying complex user flows or refactoring "noisy" existing codebases.

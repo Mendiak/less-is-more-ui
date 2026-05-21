@@ -43,6 +43,24 @@ Avoid visual excess.
 
 ---
 
+## Design Is One
+
+Inspired by Massimo Vignelli.
+
+Treat the interface as one coherent system, not a collection of styled parts. Typography,
+spacing, grid, color, and interaction states must share the same logic.
+
+Prefer:
+
+- repeated proportions instead of one-off measurements
+- consistent alignment over decorative separators
+- restrained type scales over many font sizes
+- a small, deliberate palette over expressive color variety
+
+If a visual decision cannot be explained by the system, simplify it or remove it.
+
+---
+
 ## Typography
 
 Typography should carry the visual hierarchy.

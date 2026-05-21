@@ -1538,3 +1538,58 @@ footer a:hover {
     flex-direction: column;
     gap: var(--space-8);
 }
+
+/* ============================================
+   MASSIMO VIGNELLI DEMO
+   ============================================ */
+.vignelli-grid-demo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.vignelli-row {
+    display: grid;
+    grid-template-columns: 40px 120px 1fr;
+    gap: var(--space-4);
+    align-items: baseline;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--ui-border-silent);
+}
+
+.vignelli-row:last-child {
+    border-bottom: none;
+}
+
+.vignelli-num {
+    font-family: var(--ui-font-mono);
+    font-size: var(--step--1);
+    color: var(--ui-text-dim);
+    font-weight: 500;
+}
+
+.vignelli-label {
+    font-family: var(--ui-font-sans);
+    font-size: var(--step-0);
+    font-weight: 600;
+    color: var(--ui-text);
+}
+
+.vignelli-desc {
+    font-family: var(--ui-font-sans);
+    font-size: var(--step--1);
+    color: var(--ui-text-muted);
+}
+
+@media (max-width: 600px) {
+    .vignelli-row {
+        grid-template-columns: 30px 1fr;
+        gap: var(--space-1) var(--space-4);
+    }
+    .vignelli-desc {
+        grid-column: 2;
+        margin-top: 2px;
+    }
+}
+

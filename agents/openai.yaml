@@ -1,0 +1,7 @@
+interface:
+  display_name: "Less Is More UI"
+  short_description: "Minimalist UI guidance for calm web interfaces"
+  default_prompt: "Use $less-is-more-ui to simplify this interface with stronger typography, cleaner structure, and less visual noise."
+
+policy:
+  allow_implicit_invocation: true
