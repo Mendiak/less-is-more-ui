@@ -14,6 +14,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+    <div id="reading-progress" aria-hidden="true"></div>
     <header class="hero">
         <nav class="meta-nav">
             <div class="meta-group">
@@ -799,6 +800,15 @@ Prioritize the typography and remove all the noise."</code></pre>
             }
             document.documentElement.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
+        });
+
+        // Reading Progress Bar Logic
+        const progressBar = document.getElementById('reading-progress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = scrollTop / docHeight;
+            progressBar.style.width = `${scrollPercent * 100}%`;
         });
     </script>
 </body>
