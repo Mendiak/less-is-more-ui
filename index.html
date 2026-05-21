@@ -743,18 +743,21 @@ Prioritize the typography and remove all the noise."</code></pre>
         }, { threshold: 0.1 });
         heroObserver.observe(heroSection);
 
-        // Scroll spy: highlight active section
-        const spyObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.id;
-                    stickyLinks.forEach(link => {
-                        link.classList.toggle('is-active', link.dataset.section === id);
-                    });
+        // Scroll spy: highlight active section robustly
+        window.addEventListener('scroll', () => {
+            let current = '';
+            pillars.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
                 }
             });
-        }, { threshold: 0.3, rootMargin: '-44px 0px -40% 0px' });
-        pillars.forEach(p => spyObserver.observe(p));
+
+            stickyLinks.forEach(link => {
+                link.classList.toggle('is-active', link.dataset.section === current);
+            });
+        });
 
         // Scroll Reveal Animation
         const observerOptions = {

@@ -1222,9 +1222,10 @@ footer a:hover {
     letter-spacing: 0.08em;
     text-decoration: none;
     color: var(--ui-text-dim);
-    transition: color var(--ui-transition);
+    transition: all var(--ui-transition);
     white-space: nowrap;
-    padding-bottom: 2px;
+    padding: 4px 10px;
+    border-radius: var(--ui-radius);
 }
 
 .sticky-nav-link:hover {
@@ -1232,8 +1233,8 @@ footer a:hover {
 }
 
 .sticky-nav-link.is-active {
-    color: var(--ui-accent);
-    border-bottom: 2px solid var(--ui-accent);
+    color: #ffffff;
+    background-color: var(--ui-accent);
 }
 
 /* ============================================
