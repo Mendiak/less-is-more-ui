@@ -57,6 +57,11 @@
     --ui-font-serif: 'Playfair Display', Georgia, serif;
     --ui-font-mono: 'JetBrains Mono', monospace;
 
+    --ui-leading-tight: 1.2;
+    --ui-leading-body: 1.6;
+    --ui-tracking-tight: -0.02em;
+    --ui-tracking-wide: 0.05em;
+
     --ui-radius: 2px;
     --ui-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 

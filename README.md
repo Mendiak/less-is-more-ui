@@ -41,6 +41,8 @@ Visit the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) 
 - `docs/principles.md` – Core design philosophy (Mies, Sullivan, Rams).
 - `docs/design-manifesto.md` – High-level goals and aesthetic standards.
 - `docs/design-process.md` – Step-by-step method for minimal interface design.
+- `docs/accessibility.md` – Minimalist standards for inclusive design.
+- `docs/typography.md` – Typographic pairing and technical standards.
 - `docs/anti-patterns.md` – Visual friction to identify and remove.
 - `docs/design-checklist.md` – Final UI quality verification.
 - `assets/css/style.css` – The core design system implementation.

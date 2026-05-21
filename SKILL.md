@@ -48,6 +48,8 @@ Execute the "Subtractive Pass" on every output:
 - `references/case-studies.md`: Examples of noisy vs. essential patterns.
 - `references/components.md`: Minimalist code snippets using Essential tokens.
 - `docs/animations.md`: Standards for subtle, functional micro-interactions.
+- `docs/accessibility.md`: How to maintain WCAG compliance without adding visual noise.
+- `docs/typography.md`: Modernist pairing guides for system and open-source fonts.
 - `docs/responsive.md`: How to handle smaller screens via reduction, not stacking.
 - `docs/anti-patterns.md`: Fast checklist of visual noise to remove.
 - `docs/design-checklist.md`: Final verification checklist before presenting a UI.
