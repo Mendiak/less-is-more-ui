@@ -1,15 +1,18 @@
 :root {
-    /* 1. Neutral Palette (Warm Grays) */
-    --gray-0:   #0f0e0e; /* Near Black Warm */
-    --gray-10:  #1c1a1a; /* Essential Text */
-    --gray-40:  #4a4545; /* Paragraphs */
-    --gray-60:  #6b6565; /* Muted Text */
-    --gray-80:  #9e9797; /* Dimmed Text */
-    --gray-90:  #d6cfcf; /* Strong Borders */
-    --gray-94:  #ede8e8; /* Silent Borders */
-    --gray-97:  #fcfafa; /* Surface Alt */
-    --gray-99:  #fffdfd; /* Main Background */
-    --gray-100: #ffffff; /* Surface */
+    /* 1. Neutral Palette (Stark Contrast) */
+    --gray-0:   #000000; /* Pure Black */
+    --gray-10:  #111111; /* Almost Black */
+    --gray-40:  #444444; /* Dark Gray */
+    --gray-60:  #666666; /* Mid Gray */
+    --gray-80:  #888888; /* Light Gray */
+    --gray-90:  #cccccc; /* Dim Gray */
+    --gray-94:  #eeeeee; /* Subtle Border */
+    --gray-97:  #f5f5f5; /* Off-White */
+    --gray-99:  #fafafa; /* Near White */
+    --gray-100: #ffffff; /* Pure White */
+
+    /* Vignelli Palette */
+    --vignelli-red: #F03C31;
 
     /* 2. Modular Typographic Scale (Major Third - 1.250) */
     --step--2: 0.64rem;
@@ -36,17 +39,19 @@
     --space-32: calc(var(--space-base) * 32); /* 256px */
 
     /* 4. Semantic Aliases (Light Mode Default) */
-    --ui-bg: var(--gray-99);
-    --ui-text: var(--gray-10);
-    --ui-text-muted: var(--gray-60);
-    --ui-text-dim: var(--gray-80);
-    --ui-text-para: var(--gray-40);
+    --ui-bg: var(--gray-100);
+    --ui-text: var(--gray-0);
+    --ui-text-muted: var(--gray-40);
+    --ui-text-dim: var(--gray-60);
+    --ui-text-para: var(--gray-10);
     
-    --ui-border-silent: var(--gray-94);
-    --ui-border-strong: var(--gray-90);
+    --ui-border-silent: var(--gray-0); /* Vignelli borders are strict */
+    --ui-border-strong: var(--gray-0);
     
     --ui-surface: var(--gray-100);
-    --ui-surface-alt: var(--gray-97);
+    --ui-surface-alt: var(--gray-100); /* No subtle backgrounds */
+    
+    --ui-accent: var(--vignelli-red);
     
     --ui-font-sans: 'Inter', -apple-system, sans-serif;
     --ui-font-serif: 'Playfair Display', Georgia, serif;
@@ -72,14 +77,15 @@
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
         --ui-bg: var(--gray-0);
-        --ui-text: var(--gray-99);
-        --ui-text-muted: var(--gray-80);
-        --ui-text-dim: var(--gray-80);
-        --ui-text-para: var(--gray-90);
-        --ui-border-silent: var(--gray-10);
-        --ui-border-strong: var(--gray-40);
-        --ui-surface: var(--gray-10);
-        --ui-surface-alt: #121111; /* Slightly lighter than gray-0 */
+        --ui-text: var(--gray-100);
+        --ui-text-muted: var(--gray-60);
+        --ui-text-dim: var(--gray-60);
+        --ui-text-para: var(--gray-94);
+        --ui-border-silent: var(--gray-100);
+        --ui-border-strong: var(--gray-100);
+        --ui-surface: var(--gray-0);
+        --ui-surface-alt: var(--gray-0);
+        --ui-accent: var(--vignelli-red);
 
         /* Noisy Dark Overrides */
         --noisy-bg: #121212;
@@ -97,14 +103,15 @@
 
 [data-theme="dark"] {
     --ui-bg: var(--gray-0);
-    --ui-text: var(--gray-99);
-    --ui-text-muted: var(--gray-80);
-    --ui-text-dim: var(--gray-80);
-    --ui-text-para: var(--gray-90);
-    --ui-border-silent: var(--gray-10);
-    --ui-border-strong: var(--gray-40);
-    --ui-surface: var(--gray-10);
-    --ui-surface-alt: #121111;
+    --ui-text: var(--gray-100);
+    --ui-text-muted: var(--gray-60);
+    --ui-text-dim: var(--gray-60);
+    --ui-text-para: var(--gray-94);
+    --ui-border-silent: var(--gray-100);
+    --ui-border-strong: var(--gray-100);
+    --ui-surface: var(--gray-0);
+    --ui-surface-alt: var(--gray-0);
+    --ui-accent: var(--vignelli-red);
 
     /* Noisy Dark Overrides */
     --noisy-bg: #121212;
@@ -120,15 +127,16 @@
 }
 
 [data-theme="light"] {
-    --ui-bg: var(--gray-99);
-    --ui-text: var(--gray-10);
-    --ui-text-muted: var(--gray-60);
-    --ui-text-dim: var(--gray-80);
-    --ui-text-para: var(--gray-40);
-    --ui-border-silent: var(--gray-95);
-    --ui-border-strong: var(--gray-90);
-    --ui-surface: var(--gray-99);
-    --ui-surface-alt: var(--gray-94); /* Distinct from bg */
+    --ui-bg: var(--gray-100);
+    --ui-text: var(--gray-0);
+    --ui-text-muted: var(--gray-40);
+    --ui-text-dim: var(--gray-60);
+    --ui-text-para: var(--gray-10);
+    --ui-border-silent: var(--gray-0);
+    --ui-border-strong: var(--gray-0);
+    --ui-surface: var(--gray-100);
+    --ui-surface-alt: var(--gray-100);
+    --ui-accent: var(--vignelli-red);
 
     /* Noisy Light Overrides */
     --noisy-bg: #f5f5f5;

@@ -30,8 +30,10 @@ header.hero {
     max-width: var(--max-width-main);
     margin: 0 auto;
     padding: var(--space-32) var(--space-4) var(--space-16) var(--space-4);
-    border-bottom: 1px solid var(--ui-border-silent);
+    border-bottom: 4px solid var(--ui-border-strong);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .theme-toggle {
@@ -86,12 +88,13 @@ header.hero {
 }
 
 h1 {
-    font-size: var(--step-6);
+    font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 700;
-    letter-spacing: -0.03em;
-    margin: 0 0 var(--space-2) 0;
-    line-height: 1.05;
+    letter-spacing: -0.05em;
+    margin: 0 0 var(--space-4) 0;
+    line-height: 0.95;
     color: var(--ui-text);
+    text-transform: uppercase;
 }
 
 .eyebrow {
@@ -163,9 +166,9 @@ main {
 }
 
 .pillar {
-    padding-top: var(--space-24);
-    border-top: 1px solid var(--ui-border-silent);
-    margin-top: var(--space-12);
+    padding-top: var(--space-16);
+    border-top: 4px solid var(--ui-border-strong);
+    margin-top: var(--space-16);
 }
 
 .pillar:first-of-type {
@@ -181,11 +184,12 @@ main {
 
 
 .pillar-header h2 {
-    font-size: var(--step-4);
+    font-size: var(--step-5);
     font-weight: 700;
     color: var(--ui-text);
-    margin: 0 0 var(--space-1) 0;
-    letter-spacing: -0.02em;
+    margin: 0 0 var(--space-2) 0;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
 }
 
 .pillar-header p {
@@ -196,19 +200,20 @@ main {
 }
 
 .surface-subtle {
-    background-color: rgba(0, 0, 0, 0.03);
-    padding: var(--space-8) var(--space-6);
-    border-radius: var(--ui-radius);
+    background-color: transparent;
+    padding: var(--space-8) 0;
+    border-top: 2px solid var(--ui-border-strong);
+    border-radius: 0;
     margin-bottom: var(--space-8);
 }
 
 [data-theme="dark"] .surface-subtle {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .surface-subtle {
-        background-color: rgba(255, 255, 255, 0.03);
+        background-color: transparent;
     }
 }
 
@@ -217,11 +222,11 @@ section {
 }
 
 h3 {
-    font-size: var(--step-3);
+    font-size: var(--step-4);
     font-weight: 700;
     color: var(--ui-text);
     margin: 0 0 var(--space-4) 0;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
 }
 
 .precept {
@@ -380,13 +385,13 @@ code {
 }
 
 .button--primary {
-    background-color: var(--ui-text);
+    background-color: var(--ui-accent);
     color: var(--ui-surface);
     border: none;
 }
 
 .button--primary:hover {
-    background-color: var(--ui-text-para);
+    background-color: var(--ui-text);
 }
 
 .input {
@@ -584,8 +589,9 @@ footer.main-footer {
 }
 
 .essential-demo {
-    background-color: var(--ui-surface-alt);
+    background-color: var(--ui-bg);
     border: 1px solid var(--ui-border-strong);
+    border-radius: 0;
 }
 
 .demo-box:hover {
@@ -827,10 +833,11 @@ footer.main-footer {
 
 .essential-card {
     padding: var(--space-6);
-    background-color: var(--ui-surface);
-    border: 1px solid var(--ui-border-silent);
+    background-color: var(--ui-bg);
+    border: 2px solid var(--ui-border-strong);
     width: 100%;
     max-width: 300px;
+    border-radius: 0;
 }
 
 .essential-card h5 {
@@ -1190,7 +1197,7 @@ footer a:hover {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
     background: var(--ui-bg);
-    border-bottom: 1px solid var(--ui-border-silent);
+    border-bottom: 2px solid var(--ui-border-strong);
 }
 
 .sticky-nav.is-visible {
@@ -1224,8 +1231,8 @@ footer a:hover {
 }
 
 .sticky-nav-link.is-active {
-    color: var(--ui-text);
-    border-bottom: 2px solid var(--ui-text);
+    color: var(--ui-accent);
+    border-bottom: 2px solid var(--ui-accent);
 }
 
 /* ============================================
@@ -1313,7 +1320,7 @@ footer a:hover {
 
 .void-name {
     font-size: var(--step-0);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--ui-text);
 }
 
@@ -1527,7 +1534,7 @@ footer a:hover {
 
 .color-essential-accent {
     font-weight: 700;
-    color: #10b981;
+    color: var(--ui-accent);
 }
 
 /* ============================================
