@@ -380,7 +380,8 @@ code {
 }
 
 .button:hover {
-    background-color: var(--ui-border-silent);
+    background-color: var(--ui-text);
+    color: var(--ui-surface);
     transform: translateY(-2px);
 }
 
