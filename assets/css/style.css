@@ -620,13 +620,21 @@ label {
     margin-bottom: var(--space-6);
 }
 
-.axiom-list li strong {
+.axiom-list li em {
     display: block;
     font-size: var(--step--1);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
     color: var(--ui-text-dim);
-    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+    font-family: var(--ui-font-mono);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.comparison-header p em {
+    font-size: var(--step--1);
+    color: var(--ui-text-dim);
+    font-style: italic;
+    font-weight: 400;
 }
 
 .comparison-header {
