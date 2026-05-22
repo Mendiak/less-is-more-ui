@@ -204,7 +204,7 @@ h1 {
     font-weight: 400;
     line-height: 1.4;
     color: var(--ui-text-muted);
-    max-width: 50ch;
+    max-width: var(--max-width-content);
     margin: 0;
 }
 
@@ -244,26 +244,120 @@ main {
 .pillar-header p {
     font-size: var(--step-1);
     color: var(--ui-text-muted);
-    max-width: 40ch;
+    max-width: var(--max-width-content);
     margin: 0;
 }
 
+.designer-profile {
+    margin-bottom: var(--space-24);
+    position: relative;
+}
+
 .surface-subtle {
-    background-color: transparent;
-    padding: var(--space-8) 0;
-    border-top: 2px solid var(--ui-border-strong);
-    border-radius: 0;
-    margin-bottom: var(--space-8);
+    background-color: var(--ui-surface-alt);
+    padding: var(--space-8);
+    border-radius: var(--ui-radius);
+    transition: background-color var(--ui-transition);
 }
 
 [data-theme="dark"] .surface-subtle {
-    background-color: transparent;
+    background-color: var(--ui-surface);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .surface-subtle {
-        background-color: transparent;
+.designer-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.designer-image-container {
+    margin: 0;
+    line-height: 0;
+    background: var(--ui-surface-alt);
+    width: 100%;
+}
+
+.designer-content {
+    position: relative;
+}
+
+.designer-profile h3 {
+    font-size: var(--step-5);
+    margin-top: 0;
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.05em;
+}
+
+.designer-profile blockquote {
+    margin: var(--space-4) 0 var(--space-8) 0;
+    font-family: var(--ui-font-serif);
+    font-size: var(--step-4);
+    line-height: 1.2;
+    font-style: italic;
+    max-width: var(--max-width-content);
+    border-left: 2px solid var(--ui-border-strong);
+    padding-left: var(--space-4);
+}
+
+.designer-layout.landscape-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+}
+
+.designer-layout.landscape-layout .designer-image-container {
+    order: 1;
+    max-width: 100%;
+}
+
+.designer-layout.landscape-layout .designer-content {
+    order: 2;
+    max-width: var(--max-width-content);
+}
+
+@media (min-width: 900px) {
+    .designer-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
     }
+    
+    .designer-layout.inverted .designer-image-container {
+        order: 2;
+    }
+
+    .designer-layout.inverted .designer-content {
+        order: 1;
+    }
+
+    .designer-layout.landscape-layout {
+        display: block; /* Stack vertically even on desktop */
+    }
+
+    .designer-layout.landscape-layout .designer-image-container {
+        margin-bottom: var(--space-8);
+    }
+}
+
+.designer-image {
+    width: 100%;
+    height: auto;
+    filter: grayscale(1) contrast(1.1);
+    mix-blend-mode: multiply;
+    transition: filter var(--ui-transition);
+}
+
+[data-theme="dark"] .designer-image {
+    mix-blend-mode: screen;
+    filter: grayscale(1) contrast(1.2) invert(1);
+}
+
+.designer-image:hover {
+    filter: grayscale(0) contrast(1.1);
+}
+
+[data-theme="dark"] .designer-image:hover {
+    filter: grayscale(0) contrast(1.2) invert(0);
+    mix-blend-mode: normal;
 }
 
 section {
@@ -276,6 +370,10 @@ h3 {
     color: var(--ui-text);
     margin: 0 0 var(--space-4) 0;
     letter-spacing: -0.03em;
+}
+
+.application {
+    margin-top: var(--space-24);
 }
 
 .precept {
@@ -322,7 +420,7 @@ p {
     font-size: var(--step-0);
     color: var(--ui-text-para);
     margin: 0 0 var(--space-4) 0;
-    max-width: 65ch;
+    max-width: var(--max-width-content);
 }
 
 .demo-box, 
@@ -348,6 +446,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
+    width: 100%;
 }
 
 .installation-header {
@@ -525,10 +624,10 @@ label {
     font-size: var(--step-1);
     font-weight: 400;
     color: var(--ui-text-muted);
-    max-width: 30ch;
+    max-width: var(--max-width-content);
     line-height: 1.3;
     margin: 0;
-    text-align: right;
+    text-align: left;
 }
 
 .footer-meta-row {
@@ -618,6 +717,7 @@ label {
 .axiom-list li {
     font-size: var(--step-1);
     margin-bottom: var(--space-6);
+    max-width: var(--max-width-content);
 }
 
 .axiom-list li em {
@@ -657,7 +757,7 @@ label {
 .comparison-header p {
     font-size: var(--step-0);
     color: var(--ui-text-muted);
-    max-width: 50ch;
+    max-width: var(--max-width-content);
 }
 
 .comparison-grid {
