@@ -63,6 +63,7 @@
     --ui-tracking-wide: 0.05em;
 
     --ui-radius: 2px;
+    --ui-radius-full: 9999px;
     --ui-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     /* 5. Noisy Example Tokens (Default Light) */

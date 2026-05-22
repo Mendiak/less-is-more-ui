@@ -416,7 +416,7 @@ code {
 /* Component Styles */
 .button {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding: var(--space-3) var(--space-6);
     background-color: var(--ui-surface-alt);
     border: 1px solid var(--ui-text);
     color: var(--ui-text);
@@ -492,40 +492,104 @@ label {
     color: var(--ui-text);
 }
 
-footer.main-footer {
-    padding: var(--space-8) 0;
-    margin-top: var(--space-16);
-    background-color: var(--ui-surface-alt);
-    border-top: 1px solid var(--ui-border-silent);
+.main-footer {
+    padding: var(--space-24) 0 var(--space-12) 0;
+    margin-top: var(--space-24);
+    border-top: 4px solid var(--ui-border-strong);
 }
 
-.footer-content {
+.footer-minimal-container {
     max-width: var(--max-width-main);
     margin: 0 auto;
     padding: 0 var(--space-4);
-    text-align: left;
 }
 
-.main-footer p {
-    font-size: var(--step--1);
-    color: var(--ui-text-muted);
-    margin-bottom: var(--space-1);
-}
-
-.main-footer .copyright {
-    font-size: var(--step--2);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--ui-text-dim);
-}
-
-.footer-meta {
+.footer-top-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: var(--space-4);
+    margin-bottom: var(--space-16);
+    flex-wrap: wrap;
+    gap: var(--space-8);
+}
+
+.footer-name {
+    font-size: var(--step-3);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    margin: 0;
+    color: var(--ui-text);
+}
+
+.rams-quote {
+    font-size: var(--step-1);
+    font-weight: 400;
+    color: var(--ui-text-muted);
+    max-width: 30ch;
+    line-height: 1.3;
+    margin: 0;
+    text-align: right;
+}
+
+.footer-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--ui-border-silent);
     flex-wrap: wrap;
     gap: var(--space-4);
+}
+
+.footer-minimal-nav {
+    display: flex;
+    gap: var(--space-6);
+}
+
+.footer-minimal-link {
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--ui-text-dim);
+    text-decoration: none;
+    transition: color var(--ui-transition);
+}
+
+.footer-minimal-link:hover {
+    color: var(--ui-text);
+}
+
+.footer-legal {
+    font-size: var(--step--2);
+    font-family: var(--ui-font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ui-text-dim);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.footer-legal .divider {
+    color: var(--ui-border-silent);
+}
+
+@media (max-width: 768px) {
+    .footer-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: var(--space-8);
+    }
+    
+    .rams-quote {
+        text-align: left;
+        font-size: var(--step-0);
+    }
+    
+    .footer-meta-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-6);
+    }
 }
 
 .github-badge {
@@ -1674,4 +1738,5 @@ footer a:hover {
         margin-top: 2px;
     }
 }
+
 
