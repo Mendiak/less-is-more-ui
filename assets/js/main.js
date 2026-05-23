@@ -73,6 +73,9 @@ if (demoCopyBtn) {
 
 // Sticky Navigation
 const stickyNav = document.getElementById('sticky-nav');
+const stickyNavLinksContainer = document.getElementById('sticky-nav-links');
+const navToggle = document.getElementById('nav-toggle');
+const activeSectionName = document.getElementById('active-section-name');
 const heroSection = document.querySelector('header.hero');
 const pillars = document.querySelectorAll('.pillar');
 const stickyLinks = document.querySelectorAll('.sticky-nav-link');
@@ -84,6 +87,11 @@ const heroObserver = new IntersectionObserver((entries) => {
             stickyNav.classList.add('is-visible');
         } else {
             stickyNav.classList.remove('is-visible');
+            // Close mobile menu if hero is visible again
+            if (stickyNavLinksContainer) {
+                stickyNavLinksContainer.classList.remove('is-open');
+                navToggle?.setAttribute('aria-expanded', 'false');
+            }
         }
     });
 }, { threshold: 0.1 });
@@ -92,20 +100,62 @@ if (heroSection) {
     heroObserver.observe(heroSection);
 }
 
-// Scroll spy: highlight active section robustly
+// Mobile Nav Toggle Logic
+if (navToggle && stickyNavLinksContainer) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = stickyNavLinksContainer.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+        
+        // Change icon based on state
+        const icon = navToggle.querySelector('[data-lucide]');
+        if (icon) {
+            const newIconName = isOpen ? 'x' : 'menu';
+            const newIcon = document.createElement('i');
+            newIcon.setAttribute('data-lucide', newIconName);
+            newIcon.className = 'icon icon--small';
+            icon.replaceWith(newIcon);
+            lucide.createIcons();
+        }
+    });
+
+    // Close menu when a link is clicked
+    stickyLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            stickyNavLinksContainer.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            const icon = navToggle.querySelector('[data-lucide]');
+            if (icon && icon.getAttribute('data-lucide') === 'x') {
+                const menuIcon = document.createElement('i');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                menuIcon.className = 'icon icon--small';
+                icon.replaceWith(menuIcon);
+                lucide.createIcons();
+            }
+        });
+    });
+}
+
+// Scroll spy: highlight active section and update mobile title
 window.addEventListener('scroll', () => {
     let current = '';
+    let currentTitle = '';
+    
     pillars.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= (sectionTop - 100)) {
+        if (window.scrollY >= (sectionTop - 120)) {
             current = section.getAttribute('id');
+            currentTitle = section.querySelector('h2')?.textContent || '';
         }
     });
 
     stickyLinks.forEach(link => {
-        link.classList.toggle('is-active', link.dataset.section === current);
+        const isActive = link.dataset.section === current;
+        link.classList.toggle('is-active', isActive);
     });
+
+    if (activeSectionName && currentTitle) {
+        activeSectionName.textContent = currentTitle;
+    }
 });
 
 // Scroll Reveal Animation

@@ -53,10 +53,17 @@
 
     <nav class="sticky-nav" id="sticky-nav" aria-label="Page sections">
         <div class="sticky-nav-inner">
-            <a href="#foundations" class="sticky-nav-link" data-section="foundations">The Origins</a>
-            <a href="#methodology" class="sticky-nav-link" data-section="methodology">Foundational Logic</a>
-            <a href="#case-studies" class="sticky-nav-link" data-section="case-studies">Case Studies</a>
-            <a href="#interface" class="sticky-nav-link" data-section="interface">How to Use It</a>
+            <span class="sticky-nav-active-section" id="active-section-name">The Origins</span>
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="menu-text">Menu</span>
+                <i data-lucide="menu" class="icon icon--small"></i>
+            </button>
+            <div class="sticky-nav-links" id="sticky-nav-links">
+                <a href="#foundations" class="sticky-nav-link" data-section="foundations">The Origins</a>
+                <a href="#methodology" class="sticky-nav-link" data-section="methodology">Foundational Logic</a>
+                <a href="#case-studies" class="sticky-nav-link" data-section="case-studies">Case Studies</a>
+                <a href="#interface" class="sticky-nav-link" data-section="interface">How to Use It</a>
+            </div>
         </div>
     </nav>
 
