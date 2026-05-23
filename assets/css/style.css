@@ -255,7 +255,6 @@ main {
 
 .surface-subtle {
     background-color: var(--ui-surface-alt);
-    padding: var(--space-8);
     border-radius: var(--ui-radius);
     transition: background-color var(--ui-transition);
 }
@@ -606,7 +605,7 @@ label {
 .footer-top-row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin-bottom: var(--space-16);
     flex-wrap: wrap;
     gap: var(--space-8);
