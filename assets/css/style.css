@@ -414,7 +414,7 @@ main {
 
 [data-theme="dark"] .designer-image {
     mix-blend-mode: screen;
-    filter: grayscale(1) contrast(1.2) invert(1);
+    filter: grayscale(1) contrast(1.2);
 }
 
 .designer-image:hover {
@@ -422,7 +422,7 @@ main {
 }
 
 [data-theme="dark"] .designer-image:hover {
-    filter: grayscale(0) contrast(1.2) invert(0);
+    filter: grayscale(0) contrast(1.2);
     mix-blend-mode: normal;
 }
 
