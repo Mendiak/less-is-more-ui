@@ -4,6 +4,8 @@
 
 A specialized design skill for AI agents to generate calm, high-quality, and functional web interfaces. 
 
+![GitHub Screenshot](assets/images/github-screenshot.png)
+
 ## The Problem
 Most AI-generated UIs suffer from "visual noise": excessive shadows, generic gradients, and cluttered layouts. They often lack a clear typographic hierarchy and rational structure because LLMs tend to default to "over-designed" or generic components.
 
