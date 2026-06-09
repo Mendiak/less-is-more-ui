@@ -2,7 +2,12 @@
 
 > "Good design is as little design as possible." — Dieter Rams
 
-A specialized design skill for AI agents to generate calm, high-quality, and functional web interfaces. 
+<p>
+  <a href="https://www.npmjs.com/package/@mendiak/less-is-more-ui"><img src="https://img.shields.io/npm/v/@mendiak/less-is-more-ui?style=flat-square&color=000" alt="npm version"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-black?style=flat-square" alt="license"></a>
+</p>
+
+A specialized design skill for AI agents to generate calm, high-quality, and functional web interfaces.
 
 ![GitHub Screenshot](assets/images/github-screenshot.png)
 
@@ -19,10 +24,20 @@ Most AI-generated UIs suffer from "visual noise": excessive shadows, generic gra
 
 ## Installation
 
-Install using the skills CLI:
+### As an AI Agent Skill
 
 ```bash
 npx skills add Mendiak/less-is-more-ui
+```
+
+### As a CSS Design System (npm)
+
+```bash
+npm install @mendiak/less-is-more-ui
+```
+
+```css
+@import "@mendiak/less-is-more-ui";
 ```
 
 ## How to Use with AI Agents
@@ -58,6 +73,8 @@ Visit the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) 
   - `tokens.css` – Design tokens and scale variables.
 - `evals/` – Performance benchmarks and evaluation sets.
 - `assets/css/reset.css` – Tiny modernist reset for a clean start.
+- `index.css` – Entry point for the npm package.
+- `package.json` – npm package configuration.
 
 ## Philosophy
 
