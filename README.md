@@ -32,13 +32,32 @@ npx skills add Mendiak/less-is-more-ui
 
 ### As a CSS Design System (npm)
 
+Installs design tokens, a minimalist reset, and reusable component patterns.
+
 ```bash
 npm install @mendiak/less-is-more-ui
 ```
 
+Then in your project's CSS:
+
 ```css
+/* Import everything (tokens + reset + components) */
 @import "@mendiak/less-is-more-ui";
+
+/* Or import only what you need */
+@import "@mendiak/less-is-more-ui/references/tokens.css";
+@import "@mendiak/less-is-more-ui/assets/css/reset.css";
+@import "@mendiak/less-is-more-ui/assets/css/components.css";
 ```
+
+**What's included:**
+
+| File | Description |
+|------|-------------|
+| `tokens.css` | CSS custom properties: modular typographic scale, spacing system, neutral palette, semantic aliases (`var(--ui-bg)`, `var(--ui-text)`, etc.), and dark/light theme support |
+| `reset.css` | Minimalist box-sizing reset and base element normalization |
+| `components.css` | Reusable UI patterns: `.button`, `.input`, `.essential-card`, `.essential-nav`, `.essential-filters`, `.essential-specs`, `.essential-form`, `.icon`, and utility classes |
+| `style.css` | *(Demo only)* Styles for the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) showcase page. Not intended for external projects. |
 
 ## How to Use with AI Agents
 
@@ -64,7 +83,8 @@ Visit the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) 
 - `docs/typography.md` – Typographic pairing and technical standards.
 - `docs/anti-patterns.md` – Visual friction to identify and remove.
 - `docs/design-checklist.md` – Final UI quality verification.
-- `assets/css/style.css` – The core design system implementation.
+- `assets/css/style.css` – Demo showcase styles for the Museum of the Essential.
+- `assets/css/components.css` – Reusable UI component patterns (buttons, forms, cards, navs).
 - `index.html` – The "Museum of the Essential" documentation and demo.
 - `references/`
   - `axioms.md` – Foundational truths of minimal design.

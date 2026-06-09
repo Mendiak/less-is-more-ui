@@ -1,13 +1,13 @@
 {
   "name": "@mendiak/less-is-more-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimalist design system for calm, functional web interfaces. Design tokens, CSS reset, and utility patterns inspired by Mies van der Rohe and Dieter Rams.",
   "main": "index.css",
   "style": "index.css",
   "files": [
     "index.css",
     "assets/css/reset.css",
-    "assets/css/style.css",
+    "assets/css/components.css",
     "references/tokens.css"
   ],
   "keywords": [
