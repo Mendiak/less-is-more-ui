@@ -13,17 +13,26 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://mendiak.github.io/less-is-more-ui/assets/images/github-screenshot.png">
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.add('js');
+        })();
+    </script>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="references/tokens.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@1.61.0/dist/umd/lucide.min.js" defer></script>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div id="reading-progress" aria-hidden="true"></div>
     <header class="hero">
         <nav class="meta-nav">
@@ -37,7 +46,7 @@
                 <span class="value">AI Agent Skill</span>
             </div>
         </nav>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Dark theme" aria-pressed="false">
             <i data-lucide="sun" class="sun-icon"></i>
             <i data-lucide="moon" class="moon-icon"></i>
         </button>
@@ -47,8 +56,19 @@
 
         <div class="hero-stats">
             <span><strong>6</strong> Axioms</span>
-            <span><strong>7</strong> Case Studies</span>
+            <span><strong>8</strong> Case Studies</span>
             <span><strong>4</strong> Pillars</span>
+        </div>
+
+        <div class="installation-box installation-box--hero">
+            <div class="installation-header">
+                <span class="label">Install</span>
+                <button class="copy-button" aria-label="Copy installation command">
+                    <i data-lucide="copy" class="icon icon--small"></i>
+                    <span class="button-text">Copy</span>
+                </button>
+            </div>
+            <code>npx skills add Mendiak/less-is-more-ui</code>
         </div>
 
         <nav class="index-nav">
@@ -56,13 +76,14 @@
             <a href="#methodology">Foundational Logic</a>
             <a href="#case-studies">Case Studies</a>
             <a href="#interface">How to Use It</a>
+            <a href="#install">Install</a>
         </nav>
     </header>
 
     <nav class="sticky-nav" id="sticky-nav" aria-label="Page sections">
         <div class="sticky-nav-inner">
             <span class="sticky-nav-active-section" id="active-section-name">The Origins</span>
-            <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="sticky-nav-links" aria-label="Toggle navigation">
                 <span class="menu-text">Menu</span>
                 <i data-lucide="menu" class="icon icon--small"></i>
             </button>
@@ -71,11 +92,12 @@
                 <a href="#methodology" class="sticky-nav-link" data-section="methodology">Foundational Logic</a>
                 <a href="#case-studies" class="sticky-nav-link" data-section="case-studies">Case Studies</a>
                 <a href="#interface" class="sticky-nav-link" data-section="interface">How to Use It</a>
+                <a href="#install" class="sticky-nav-link">Install</a>
             </div>
         </div>
     </nav>
 
-    <main>
+    <main id="main">
         <!-- PILLAR: FOUNDATIONS -->
         <section id="foundations" class="pillar">
             <header class="pillar-header">
@@ -87,11 +109,14 @@
             <article id="mies-van-der-rohe" class="designer-profile surface-subtle">
                 <div class="designer-layout">
                     <figure class="designer-image-container">
-                        <img src="assets/images/mies.png" alt="Ludwig Mies van der Rohe" class="designer-image">
+                        <img src="assets/images/mies.png" srcset="assets/images/mies-400.png 400w, assets/images/mies.png 600w" sizes="(min-width: 900px) 384px, 100vw" width="600" height="781" loading="lazy" decoding="async" alt="Ludwig Mies van der Rohe" class="designer-image">
                     </figure>
                     <div class="designer-content">
                         <header>
-                            <span class="eyebrow">The Architect</span>
+                            <div class="designer-meta">
+                                <span class="eyebrow">The Architect</span>
+                                <a class="designer-source" href="https://en.wikipedia.org/wiki/Ludwig_Mies_van_der_Rohe" target="_blank" rel="noopener noreferrer">Wikipedia<span aria-hidden="true"> ↗</span></a>
+                            </div>
                             <h3>Ludwig Mies van der Rohe</h3>
                         </header>
                         
@@ -127,11 +152,14 @@
             <article id="louis-sullivan" class="designer-profile surface-subtle">
                 <div class="designer-layout inverted">
                     <figure class="designer-image-container">
-                        <img src="assets/images/sullivan.png" alt="Louis Sullivan" class="designer-image">
+                        <img src="assets/images/sullivan.png" srcset="assets/images/sullivan-400.png 400w, assets/images/sullivan.png 600w" sizes="(min-width: 900px) 384px, 100vw" width="600" height="776" loading="lazy" decoding="async" alt="Louis Sullivan" class="designer-image">
                     </figure>
                     <div class="designer-content">
                         <header>
-                            <span class="eyebrow">The Functionalist</span>
+                            <div class="designer-meta">
+                                <span class="eyebrow">The Functionalist</span>
+                                <a class="designer-source" href="https://en.wikipedia.org/wiki/Louis_Sullivan" target="_blank" rel="noopener noreferrer">Wikipedia<span aria-hidden="true"> ↗</span></a>
+                            </div>
                             <h3>Louis Sullivan</h3>
                         </header>
 
@@ -150,8 +178,8 @@
 
                     <div class="demo-box">
                         <nav class="functional-nav">
-                            <a href="javascript:void(0)" class="button button--primary">Take Action</a>
-                            <a href="javascript:void(0)" class="button">Learn More</a>
+                            <a href="#" class="button button--primary">Take Action</a>
+                            <a href="#" class="button">Learn More</a>
                         </nav>
                     </div>
 
@@ -169,11 +197,14 @@
             <article id="dieter-rams" class="designer-profile surface-subtle">
                 <div class="designer-layout landscape-layout">
                     <figure class="designer-image-container">
-                        <img src="assets/images/rams.png" alt="Dieter Rams" class="designer-image">
+                        <img src="assets/images/rams.png" srcset="assets/images/rams-400.png 400w, assets/images/rams.png 800w" sizes="(min-width: 900px) 896px, 100vw" width="800" height="449" loading="lazy" decoding="async" alt="Dieter Rams" class="designer-image">
                     </figure>
                     <div class="designer-content">
                         <header>
-                            <span class="eyebrow">The Industrialist</span>
+                            <div class="designer-meta">
+                                <span class="eyebrow">The Industrialist</span>
+                                <a class="designer-source" href="https://en.wikipedia.org/wiki/Dieter_Rams" target="_blank" rel="noopener noreferrer">Wikipedia<span aria-hidden="true"> ↗</span></a>
+                            </div>
                             <h3>Dieter Rams</h3>
                         </header>
 
@@ -204,13 +235,16 @@
 
             <!-- Jony Ive -->
             <article id="jony-ive" class="designer-profile surface-subtle">
-                <div class="designer-layout landscape-layout">
+                <div class="designer-layout split-layout">
                     <figure class="designer-image-container">
-                        <img src="assets/images/ive.png" alt="Jony Ive" class="designer-image">
+                        <img src="assets/images/ive.png" srcset="assets/images/ive-400.png 400w, assets/images/ive.png 600w" sizes="(min-width: 900px) 896px, 100vw" width="600" height="391" loading="lazy" decoding="async" alt="Jony Ive" class="designer-image">
                     </figure>
                     <div class="designer-content">
                         <header>
-                            <span class="eyebrow">The Craftsperson</span>
+                            <div class="designer-meta">
+                                <span class="eyebrow">The Craftsperson</span>
+                                <a class="designer-source" href="https://en.wikipedia.org/wiki/Jony_Ive" target="_blank" rel="noopener noreferrer">Wikipedia<span aria-hidden="true"> ↗</span></a>
+                            </div>
                             <h3>Jony Ive</h3>
                         </header>
 
@@ -242,15 +276,74 @@
                 </section>
             </article>
 
+            <!-- Josef Müller-Brockmann -->
+            <article id="muller-brockmann" class="designer-profile surface-subtle">
+                <div class="designer-layout inverted">
+                    <figure class="designer-image-container">
+                        <img src="assets/images/muller-brockmann.png" srcset="assets/images/muller-brockmann-400.png 400w, assets/images/muller-brockmann.png 800w" sizes="(min-width: 900px) 384px, 100vw" width="800" height="779" loading="lazy" decoding="async" alt="Josef Müller-Brockmann" class="designer-image">
+                    </figure>
+                    <div class="designer-content">
+                        <header>
+                            <div class="designer-meta">
+                                <span class="eyebrow">The Grid Theorist</span>
+                                <a class="designer-source" href="https://en.wikipedia.org/wiki/Josef_M%C3%BCller-Brockmann" target="_blank" rel="noopener noreferrer">Wikipedia<span aria-hidden="true"> ↗</span></a>
+                            </div>
+                            <h3>Josef Müller-Brockmann</h3>
+                        </header>
+
+                        <section class="philosophy">
+                            <blockquote>"The grid system is an aid, not a guarantee."</blockquote>
+                            <p>For Müller-Brockmann, design was objective communication. Columns, gutters and margins are defined first; every element is then placed on that structure. The grid does not limit the work — it makes a coherent system possible, and it is learned through practice.</p>
+                        </section>
+                    </div>
+                </div>
+
+                <section class="application">
+                    <div class="precept">
+                        <h4>The Constructed Grid: Columns, Gutters, Baseline</h4>
+                        <p>On the web, the grid is <code>grid-template-columns</code> plus a spacing scale. Define the column count, the gutter and the baseline before writing any component, then place content with spans instead of one-off widths. Twelve columns and an 8px baseline cover almost every interface.</p>
+                    </div>
+
+                    <div class="demo-box">
+                        <div class="mb-grid-demo">
+                            <span class="mb-grid-label">12 columns · 16px gutter · 8px baseline</span>
+                            <div class="mb-grid mb-grid--guides" aria-hidden="true">
+                                <span class="mb-col"></span><span class="mb-col"></span><span class="mb-col"></span><span class="mb-col"></span><span class="mb-col"></span><span class="mb-col"></span>
+                                <span class="mb-col"></span><span class="mb-col"></span><span class="mb-col"></span><span class="mb-col"></span><span class="mb-col"></span><span class="mb-col"></span>
+                            </div>
+                            <div class="mb-grid mb-grid--content">
+                                <span class="mb-span mb-span--8">8 cols</span>
+                                <span class="mb-span mb-span--4">4 cols</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <figure class="code-figure">
+                        <figcaption>Express placement as spans, not fixed widths:</figcaption>
+                        <pre class="code-example"><code>.layout {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-2);
+}
+
+.headline { grid-column: span 8; }
+.aside    { grid-column: span 4; }</code></pre>
+                    </figure>
+                </section>
+            </article>
+
             <!-- Massimo Vignelli -->
             <article id="massimo-vignelli" class="designer-profile surface-subtle">
                 <div class="designer-layout">
                     <figure class="designer-image-container">
-                        <img src="assets/images/vignelli.png" alt="Massimo Vignelli" class="designer-image">
+                        <img src="assets/images/vignelli.png" srcset="assets/images/vignelli-400.png 400w, assets/images/vignelli.png 600w" sizes="(min-width: 900px) 384px, 100vw" width="600" height="727" loading="lazy" decoding="async" alt="Massimo Vignelli" class="designer-image">
                     </figure>
                     <div class="designer-content">
                         <header>
-                            <span class="eyebrow">The Systematist</span>
+                            <div class="designer-meta">
+                                <span class="eyebrow">The Systematist</span>
+                                <a class="designer-source" href="https://en.wikipedia.org/wiki/Massimo_Vignelli" target="_blank" rel="noopener noreferrer">Wikipedia<span aria-hidden="true"> ↗</span></a>
+                            </div>
                             <h3>Massimo Vignelli</h3>
                         </header>
 
@@ -263,8 +356,8 @@
 
                 <section class="application">
                     <div class="precept">
-                        <h4>The Grid System: Structural Discipline</h4>
-                        <p>In web design, this means relying on repeated proportions, consistent vertical rhythm, and alignment instead of visual separators. A strong grid guides the eye effortlessly and groups information naturally.</p>
+                        <h4>Design Is One: Systemic Discipline</h4>
+                        <p>In web design, this means every decision — type, spacing, color, components — obeys the same system. Repeated proportions and consistent alignment guide the eye effortlessly and group information naturally.</p>
                     </div>
 
                     <div class="demo-box">
@@ -288,11 +381,11 @@
                     </div>
 
                     <figure class="code-figure">
-                        <figcaption>Use semantic, clean grid layouts without visual borders:</figcaption>
+                        <figcaption>Keep the system semantic and consistent — borders are not required:</figcaption>
                         <pre class="code-example"><code>&lt;div class="grid-system"&gt;
     &lt;div class="grid-row"&gt;
         &lt;span&gt;01&lt;/span&gt;
-        &lt;h5&gt;Semantics&lt;/h5&gt;
+        &lt;h4&gt;Semantics&lt;/h4&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                     </figure>
@@ -301,7 +394,7 @@
         </section>
 
         <!-- PILLAR: METHODOLOGY -->
-        <section id="methodology" class="pillar">
+        <section id="methodology" class="pillar pillar--inverted">
             <header class="pillar-header">
                 <h2>Methodology</h2>
                 <p>Translating these classic principles into modern web design decisions.</p>
@@ -330,7 +423,7 @@
                     <section class="application">
                         <div class="precept">
                             <h4>All 6 Axioms in Practice</h4>
-                            <p>Axioms 1–4 are demonstrated through the designer profiles above: <strong>Justification</strong> through Mies van der Rohe, <strong>Material Honesty</strong> through Sullivan, <strong>Typographic Dominance</strong> through Rams &amp; Ive, and <strong>The Silent Grid</strong> through Vignelli. The two remaining axioms require a direct visual comparison to be fully understood:</p>
+                            <p>Axioms 1–4 are demonstrated through the designer profiles above: <strong>Justification</strong> through Mies van der Rohe, <strong>Material Honesty</strong> through Sullivan, <strong>Typographic Dominance</strong> through Rams &amp; Ive, and <strong>The Silent Grid</strong> through Müller-Brockmann. The two remaining axioms require a direct visual comparison to be fully understood:</p>
                         </div>
 
                         <div class="axiom-demos">
@@ -359,22 +452,22 @@
                                     <div>
                                         <span class="label">Too many options</span>
                                         <div class="choice-noisy">
-                                            <a href="javascript:void(0)">Home</a>
-                                            <a href="javascript:void(0)">Products</a>
-                                            <a href="javascript:void(0)">Services</a>
-                                            <a href="javascript:void(0)">Blog</a>
-                                            <a href="javascript:void(0)">About</a>
-                                            <a href="javascript:void(0)">Team</a>
-                                            <a href="javascript:void(0)">Pricing</a>
-                                            <a href="javascript:void(0)">Contact</a>
+                                            <a href="#">Home</a>
+                                            <a href="#">Products</a>
+                                            <a href="#">Services</a>
+                                            <a href="#">Blog</a>
+                                            <a href="#">About</a>
+                                            <a href="#">Team</a>
+                                            <a href="#">Pricing</a>
+                                            <a href="#">Contact</a>
                                         </div>
                                     </div>
                                     <div>
                                         <span class="label">Curated</span>
                                         <div class="choice-essential">
-                                            <a href="javascript:void(0)" class="primary">Work</a>
-                                            <a href="javascript:void(0)">About</a>
-                                            <a href="javascript:void(0)">Contact</a>
+                                            <a href="#" class="primary">Work</a>
+                                            <a href="#">About</a>
+                                            <a href="#">Contact</a>
                                         </div>
                                     </div>
                                 </div>
@@ -389,7 +482,7 @@
         <section id="case-studies" class="pillar">
             <header class="pillar-header">
                 <h2>Case Studies</h2>
-                <p>Seven real UI patterns, compared side by side. The noisy way versus the essential way — same content, radically different clarity.</p>
+                <p>Eight real UI patterns, compared side by side. The noisy way versus the essential way — same content, radically different clarity.</p>
             </header>
 
             <div class="case-studies-grid">
@@ -397,7 +490,7 @@
                     <div class="surface-subtle">
                         <div class="comparison-header">
                             <span class="eyebrow">Case Study 01</span>
-                            <h5>The Information Card</h5>
+                            <h3>The Information Card</h3>
                             <p>Reducing the container to amplify the content. <em>A card is a logical group, not a physical object in a box.</em></p>
                         </div>
                     <div class="comparison-grid">
@@ -405,8 +498,7 @@
                             <span class="label">The Noisy Way</span>
                             <div class="demo-box noisy-demo">
                                 <div class="noisy-card">
-                                    <span class="icon">✨</span>
-                                    <h5>Project Alpha</h5>
+                                    <p class="card-name">Project Alpha</p>
                                     <p>Active Status</p>
                                     <button class="noisy-button">View Details</button>
                                 </div>
@@ -417,7 +509,7 @@
                             <div class="demo-box essential-demo">
                                 <div class="essential-card">
                                     <p class="status">Active</p>
-                                    <h5>Project Alpha</h5>
+                                    <p class="card-name">Project Alpha</p>
                                 </div>
                             </div>
                         </div>
@@ -428,7 +520,7 @@
                     <div class="surface-subtle">
                         <div class="comparison-header">
                             <span class="eyebrow">Case Study 02</span>
-                            <h5>Global Navigation</h5>
+                            <h3>Global Navigation</h3>
                             <p>Curation over decoration. <em>If everything is highlighted, nothing is important.</em></p>
                         </div>
                         <div class="comparison-grid">
@@ -437,11 +529,11 @@
                                 <div class="demo-box noisy-demo">
                                     <nav class="noisy-nav">
                                         <div class="logo">LOGO</div>
-                                        <a href="javascript:void(0)">Home</a>
-                                        <a href="javascript:void(0)">Products <span class="badge">New</span></a>
-                                        <a href="javascript:void(0)">Services</a>
-                                        <a href="javascript:void(0)">About</a>
-                                        <a href="javascript:void(0)">Contact</a>
+                                        <a href="#">Home</a>
+                                        <a href="#">Products <span class="badge">New</span></a>
+                                        <a href="#">Services</a>
+                                        <a href="#">About</a>
+                                        <a href="#">Contact</a>
                                         <div class="search-bar">Search...</div>
                                     </nav>
                                 </div>
@@ -451,9 +543,9 @@
                                 <div class="demo-box essential-demo">
                                     <nav class="essential-nav">
                                         <div class="links">
-                                            <a href="javascript:void(0)">Work</a>
-                                            <a href="javascript:void(0)">About</a>
-                                            <a href="javascript:void(0)">Contact</a>
+                                            <a href="#">Work</a>
+                                            <a href="#">About</a>
+                                            <a href="#">Contact</a>
                                         </div>
                                     </nav>
                                 </div>
@@ -465,7 +557,7 @@
                     <div class="surface-subtle">
                         <div class="comparison-header">
                             <span class="eyebrow">Case Study 03</span>
-                            <h5>The Silent Checkout</h5>
+                            <h3>The Silent Checkout</h3>
                             <p>Removing anxiety through typographic clarity. <em>Error states should inform, not panic.</em></p>
                         </div>
                         <div class="comparison-grid">
@@ -473,9 +565,9 @@
                                 <span class="label">The Noisy Way</span>
                                 <div class="demo-box noisy-demo">
                                     <div class="noisy-form">
-                                        <label>Email Address <span class="required">*</span></label>
-                                        <input type="text" value="invalid-email" class="noisy-input error">
-                                        <span class="error-msg">⚠️ CRITICAL ERROR: INVALID EMAIL FORMAT</span>
+                                        <label for="demo-email-noisy">Email Address <span class="required">*</span></label>
+                                        <input type="text" id="demo-email-noisy" name="demo-email-noisy" value="invalid-email" class="noisy-input error">
+                                        <span class="error-msg">CRITICAL ERROR: INVALID EMAIL FORMAT</span>
                                     </div>
                                 </div>
                             </div>
@@ -483,8 +575,8 @@
                                 <span class="label">The Essential Way</span>
                                 <div class="demo-box essential-demo">
                                     <div class="essential-form">
-                                        <label>Email Address</label>
-                                        <input type="text" value="invalid-email" class="input">
+                                        <label for="demo-email-essential">Email Address</label>
+                                        <input type="text" id="demo-email-essential" name="demo-email-essential" value="invalid-email" class="input">
                                         <span class="field-message">Please enter a valid email.</span>
                                     </div>
                                 </div>
@@ -496,7 +588,7 @@
                     <div class="surface-subtle">
                         <div class="comparison-header">
                             <span class="eyebrow">Case Study 04</span>
-                            <h5>Product Specifications</h5>
+                            <h3>Product Specifications</h3>
                             <p>Using alignment and typography to create structure. <em>Borders are for people who don't trust their own grid.</em></p>
                         </div>
                         <div class="comparison-grid">
@@ -527,7 +619,7 @@
                     <div class="surface-subtle">
                         <div class="comparison-header">
                             <span class="eyebrow">Case Study 05</span>
-                            <h5>Search & Discovery</h5>
+                            <h3>Search & Discovery</h3>
                             <p>Filtering as a thought process, not a technical operation.</p>
                         </div>
                         <div class="comparison-grid">
@@ -544,9 +636,9 @@
                                 <span class="label">The Essential Way</span>
                                 <div class="demo-box essential-demo">
                                     <div class="essential-filters">
-                                        <a href="javascript:void(0)">All</a>
-                                        <a href="javascript:void(0)" class="active">New</a>
-                                        <a href="javascript:void(0)">Archived</a>
+                                        <a href="#">All</a>
+                                        <a href="#" class="active">New</a>
+                                        <a href="#">Archived</a>
                                     </div>
                                 </div>
                             </div>
@@ -557,7 +649,7 @@
                     <div class="surface-subtle">
                         <div class="comparison-header">
                             <span class="eyebrow">Case Study 06</span>
-                            <h5>Purposeful Animation</h5>
+                            <h3>Purposeful Animation</h3>
                             <p>Motion should confirm an action, not decorate a page. Hover both buttons.</p>
                         </div>
                         <div class="comparison-grid">
@@ -592,7 +684,7 @@
                     <div class="surface-subtle">
                         <div class="comparison-header">
                             <span class="eyebrow">Case Study 07</span>
-                            <h5>Color Restraint</h5>
+                            <h3>Color Restraint</h3>
                             <p>Color as semantic signal, not decoration. One accent color, used only to communicate state.</p>
                         </div>
                         <div class="comparison-grid">
@@ -618,17 +710,48 @@
                                     <div class="color-essential-ui">
                                         <p class="color-essential-header">Dashboard</p>
                                         <div class="spec-row">
+                                            <span>Status</span>
+                                            <span class="color-essential-accent">Attention required</span>
+                                        </div>
+                                        <div class="spec-row">
                                             <span>New items</span>
-                                            <span class="color-essential-accent">12</span>
+                                            <span>12</span>
                                         </div>
                                         <div class="spec-row">
                                             <span>Active sales</span>
                                             <span>3</span>
                                         </div>
-                                        <div class="spec-row">
-                                            <span>Status</span>
-                                            <span>Nominal</span>
-                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comparison 8: The Measured Layout -->
+                    <div class="surface-subtle">
+                        <div class="comparison-header">
+                            <span class="eyebrow">Case Study 08</span>
+                            <h3>The Measured Layout</h3>
+                            <p>Spacing as a system. <em>If the gaps are arbitrary, the layout has no rhythm.</em></p>
+                        </div>
+                        <div class="comparison-grid">
+                            <div class="comparison-item">
+                                <span class="label">The Noisy Way</span>
+                                <div class="demo-box noisy-demo">
+                                    <div class="baseline-demo baseline-noisy">
+                                        <p class="baseline-title">Release notes</p>
+                                        <p class="baseline-meta">v2.4 · 12 March</p>
+                                        <p class="baseline-body">Fixed the login redirect and improved the export flow.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="label">The Essential Way</span>
+                                <div class="demo-box essential-demo">
+                                    <div class="baseline-demo baseline-essential">
+                                        <p class="baseline-title">Release notes</p>
+                                        <p class="baseline-meta">v2.4 · 12 March</p>
+                                        <p class="baseline-body">Fixed the login redirect and improved the export flow.</p>
                                     </div>
                                 </div>
                             </div>
@@ -659,19 +782,19 @@
                     <div class="substractive-steps">
                         <div class="substractive-step">
                             <span class="step-number">01 — Identify</span>
-                            <h5>Find the Noise</h5>
+                            <h4>Find the Noise</h4>
                             <p>Scan for shadows, decorative gradients, redundant icons, unnecessary borders, and anything that exists for visual richness rather than function.</p>
                         </div>
                         <div class="substractive-arrow">→</div>
                         <div class="substractive-step">
                             <span class="step-number">02 — Remove</span>
-                            <h5>Delete &amp; Re-evaluate</h5>
+                            <h4>Delete &amp; Re-evaluate</h4>
                             <p>Remove each noisy element. If the interface still communicates the same information, the element was unnecessary. Leave it out.</p>
                         </div>
                         <div class="substractive-arrow">→</div>
                         <div class="substractive-step">
                             <span class="step-number">03 — Refine</span>
-                            <h5>Restore with Type &amp; Space</h5>
+                            <h4>Restore with Type &amp; Space</h4>
                             <p>Compensate for the removed noise by improving typographic hierarchy, line-height, letter-spacing, and whitespace. Structure through rhythm.</p>
                         </div>
                     </div>
@@ -696,7 +819,7 @@
                     </div>
 
                     <div class="demo-box no-border">
-                        <div class="installation-box">
+                        <div class="installation-box" id="install">
                             <div class="installation-header">
                                 <span class="label"><i data-lucide="terminal" class="icon icon--small"></i>Installation</span>
                                 <button class="copy-button" aria-label="Copy installation command">
@@ -733,10 +856,11 @@ Prioritize the typography and remove all the noise."</code></pre>
             <div class="footer-meta-row">
                 <nav class="footer-minimal-nav">
                     <a href="https://github.com/Mendiak/less-is-more-ui" class="footer-minimal-link">GitHub</a>
+                    <a href="https://www.npmjs.com/package/@mendiak/less-is-more-ui" class="footer-minimal-link">npm</a>
                     <a href="https://github.com/Mendiak/less-is-more-ui/blob/main/SKILL.md" class="footer-minimal-link">Docs</a>
                     <a href="#foundations" class="footer-minimal-link">Top</a>
                 </nav>
-                <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="Mendiak" data-color="#FFDD00" data-emoji=""  data-font="Arial" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+                <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="Mendiak" data-color="#FFDD00" data-emoji=""  data-font="Inter" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
                 <div class="footer-legal">
                     <span>GNU GPL v3.0</span>
                     <span class="divider">/</span>

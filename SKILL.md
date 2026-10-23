@@ -3,9 +3,9 @@ name: less-is-more-ui
 description: >
   Use when designing, refactoring, or reviewing web interfaces that should feel calm, precise,
   functional, and visually restrained. Applies minimalist UI principles inspired by Ludwig Mies
-  van der Rohe, Louis Sullivan, Massimo Vignelli, Dieter Rams, and Jony Ive, with emphasis on
-  strong typography, structured layouts, semantic HTML, restrained motion, and removal of visual
-  noise.
+  van der Rohe, Louis Sullivan, Massimo Vignelli, Josef Müller-Brockmann, Dieter Rams, and Jony Ive,
+  with emphasis on strong typography, structured layouts, semantic HTML, restrained motion, and
+  removal of visual noise.
 metadata:
   tags: [ui, ux, web-design, minimalism, modernist, layout, typography, frontend]
 ---
@@ -22,6 +22,7 @@ The goal is to create interfaces where **reduction is the primary value**. Every
 Understand the philosophical roots of minimalist design. Detailed in `docs/principles.md` and `docs/design-manifesto.md`.
 - **Miesian Clarity**: Remove all decorative elements. Let the content speak.
 - **Sullivan's Logic**: Form follows function. Every element must reflect its purpose.
+- **Müller-Brockmann's Grid**: Construct the mathematical structure — columns, gutters, baseline — before styling. Placement is expressed as spans, not arbitrary widths.
 - **Vignelli's Discipline**: Use grids, type, scale, and alignment as a complete visual system.
 - **Rams' Systemic Simplicity**: Good design is understandable and unobtrusive.
 
@@ -47,9 +48,10 @@ Execute the "Subtractive Pass" and follow the process in `docs/design-process.md
 - `assets/css/style.css`: The core implementation of the system's aesthetics.
 - `references/tokens.css`: The Essential Design System tokens. **Always use these semantic variables instead of hardcoded hex values or generic units.**
 - `references/axioms.md`: The logical foundation for design decisions.
+- `references/grid.md`: Grid construction, spans, baseline rhythm and responsive column reduction (Müller-Brockmann).
 - `references/case-studies.md`: Examples of noisy vs. essential patterns.
 - `references/components.md`: Minimalist code snippets using Essential tokens.
-- `docs/principles.md`: Deep dive into the philosophical foundations (Mies, Sullivan, Vignelli, Rams).
+- `docs/principles.md`: Deep dive into the philosophical foundations (Mies, Sullivan, Müller-Brockmann, Vignelli, Rams).
 - `docs/design-manifesto.md`: The high-level vision for calm and rational interfaces.
 - `docs/design-process.md`: Step-by-step methodology for building minimalist UIs.
 - `docs/animations.md`: Standards for subtle, functional micro-interactions.
@@ -60,9 +62,9 @@ Execute the "Subtractive Pass" and follow the process in `docs/design-process.md
 - `docs/design-checklist.md`: Final verification checklist before presenting a UI.
 
 Load only the resources needed for the task. Start with `references/axioms.md` for reasoning,
-`references/tokens.css` before writing CSS, and `references/components.md` before implementing
-buttons, forms, cards, navigation, or other interface primitives. Use `index.html` as a reference
-for the final visual quality expected.
+`references/tokens.css` before writing CSS, `references/grid.md` before laying out a page, and
+`references/components.md` before implementing buttons, forms, cards, navigation, or other
+interface primitives. Use `index.html` as a reference for the final visual quality expected.
 
 ## When to Use This Skill
 

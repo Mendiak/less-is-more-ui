@@ -69,3 +69,20 @@ Reference these in your `tokens.css`:
   --ui-tracking-wide: 0.05em;
 }
 ```
+
+## 6. Baseline Grid
+
+Müller-Brockmann's grid is horizontal and vertical. A layout only has rhythm when text and spacing share one baseline.
+
+Use an 8px baseline and make every `line-height` land on a multiple of it:
+
+| Size | Line-height | Line box |
+|------|-------------|----------|
+| 12.8px | 1.25 | 16px |
+| 16px | 1.5 | 24px |
+| 20px | 1.2 | 24px |
+| 24px | 1.333 | 32px |
+
+Spacing between blocks should come from the same scale: 8, 16, 24, 32, 48.
+
+If line boxes and gaps do not share the baseline, the page feels subtly unstable even when every element looks right on its own. See `references/grid.md` for the full construction method.

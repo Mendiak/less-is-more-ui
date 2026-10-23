@@ -43,6 +43,21 @@ Avoid visual excess.
 
 ---
 
+## Constructive Order
+
+Inspired by Josef Müller-Brockmann.
+
+The grid is a system for ordering information, not a decorative overlay. Define it before you style anything:
+
+- **Columns**: 12 on desktop, 6 on tablet, 4 on mobile.
+- **Gutters**: one value, taken from the spacing scale.
+- **Baseline**: every line of text and every vertical gap lands on the same 8px rhythm.
+- **Placement**: express position as grid spans, never as arbitrary widths.
+
+A grid is "an aid, not a guarantee." It makes many good layouts possible; it does not design them for you. Keep it invisible in the final interface.
+
+---
+
 ## Design Is One
 
 Inspired by Massimo Vignelli.

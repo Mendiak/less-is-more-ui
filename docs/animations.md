@@ -47,7 +47,7 @@ When revealing hidden content (like a dropdown or modal), avoid bouncy or elasti
 
 ## Anti-patterns in Animation
 
-- ❌ Bounce or elastic easings.
-- ❌ Long animations (>300ms) that block the user.
-- ❌ Continuous pulsing or shaking elements.
-- ❌ Complex staggering effects on list items.
+- Bounce or elastic easings.
+- Long animations (>300ms) that block the user.
+- Continuous pulsing or shaking elements.
+- Complex staggering effects on list items.

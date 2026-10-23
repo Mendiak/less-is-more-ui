@@ -22,6 +22,9 @@ Void is not "empty space"; it is a tool for grouping and separation. Generous wh
 **Structure must be felt, not seen.**
 Align elements to a consistent mathematical grid. The alignment itself provides the order; you don't need lines or containers to show where things start and end.
 
+### Constructing the grid
+Following Müller-Brockmann, define the structure *before* building components: column count, gutters, margins and baseline. Place elements with spans, not fixed widths, and keep every vertical measurement on the baseline (8px in this system). The grid is invisible in the final interface; it is a tool for decisions, not decoration.
+
 ## 6. The Paradox of Choice
 **Less choice leads to more action.**
 Limit options to the primary goal. If a screen has more than one primary action, it is not yet "Essential."

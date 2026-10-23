@@ -4,6 +4,7 @@
     --gray-10:  #111111; /* Almost Black */
     --gray-40:  #444444; /* Dark Gray */
     --gray-60:  #666666; /* Mid Gray */
+    --gray-70:  #aaaaaa; /* Secondary Text (Dark Theme) */
     --gray-80:  #888888; /* Light Gray */
     --gray-90:  #cccccc; /* Dim Gray */
     --gray-94:  #eeeeee; /* Subtle Border */
@@ -52,6 +53,7 @@
     --ui-surface-alt: var(--gray-100); /* No subtle backgrounds */
     
     --ui-accent: var(--vignelli-red);
+    --ui-accent-ink: #C0271E; /* Accent for text on light backgrounds (AA) */
     
     --ui-font-sans: 'Inter', -apple-system, sans-serif;
     --ui-font-serif: 'Playfair Display', Georgia, serif;
@@ -84,8 +86,8 @@
     :root:not([data-theme="light"]) {
         --ui-bg: var(--gray-0);
         --ui-text: var(--gray-100);
-        --ui-text-muted: var(--gray-60);
-        --ui-text-dim: var(--gray-60);
+        --ui-text-muted: var(--gray-70);
+        --ui-text-dim: var(--gray-80);
         --ui-text-para: var(--gray-94);
         --ui-border-silent: var(--gray-100);
         --ui-border-strong: var(--gray-100);
@@ -110,8 +112,8 @@
 [data-theme="dark"] {
     --ui-bg: var(--gray-0);
     --ui-text: var(--gray-100);
-    --ui-text-muted: var(--gray-60);
-    --ui-text-dim: var(--gray-60);
+    --ui-text-muted: var(--gray-70);
+    --ui-text-dim: var(--gray-80);
     --ui-text-para: var(--gray-94);
     --ui-border-silent: var(--gray-100);
     --ui-border-strong: var(--gray-100);

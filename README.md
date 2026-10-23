@@ -61,7 +61,7 @@ Then in your project's CSS:
 
 ## How to Use with AI Agents
 
-Once activated, you can direct your agent with high-level design intent. The agent will use the bundled resources (`principles.md`, `references/components.md`, etc.) to make informed decisions.
+Once activated, you can direct your agent with high-level design intent. The agent will use the bundled resources (`principles.md`, `references/grid.md`, `references/components.md`, etc.) to make informed decisions.
 
 **Example Prompts:**
 - *"Refactor this dashboard following the Less Is More manifesto."*
@@ -71,10 +71,17 @@ Once activated, you can direct your agent with high-level design intent. The age
 ## Demo
 Visit the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) for a curated showcase of these principles in action.
 
+The showcase applies the same rules it documents:
+
+- **Six designer profiles** — Mies van der Rohe, Louis Sullivan, Dieter Rams, Jony Ive, Josef Müller-Brockmann and Massimo Vignelli — each with a different layout treatment.
+- **Eight case studies** comparing the noisy and the essential version of the same pattern.
+- **A 12-column grid and an 8px baseline**, with section headers composed across the grid and placement expressed as spans.
+- **A single inverted chapter** (Methodology) and an inverted footer to give the page contrast without decoration.
+
 ## Repository Structure
 
 - `SKILL.md` – Main entry point and agent instructions.
-- `docs/principles.md` – Core design philosophy (Mies, Sullivan, Rams).
+- `docs/principles.md` – Core design philosophy (Mies, Sullivan, Müller-Brockmann, Vignelli, Rams).
 - `docs/design-manifesto.md` – High-level goals and aesthetic standards.
 - `docs/design-process.md` – Step-by-step method for minimal interface design.
 - `docs/animations.md` – Functional standards for subtle micro-interactions.
@@ -88,6 +95,7 @@ Visit the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) 
 - `index.html` – The "Museum of the Essential" documentation and demo.
 - `references/`
   - `axioms.md` – Foundational truths of minimal design.
+  - `grid.md` – Grid construction, spans, baseline rhythm and responsive column reduction (Müller-Brockmann).
   - `case-studies.md` – Analysis of successful minimal interfaces.
   - `components.md` – Pattern library for buttons, inputs, and cards.
   - `tokens.css` – Design tokens and scale variables.
@@ -95,6 +103,7 @@ Visit the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) 
 - `assets/css/reset.css` – Tiny modernist reset for a clean start.
 - `index.css` – Entry point for the npm package.
 - `package.json` – npm package configuration.
+- `CHANGELOG.md` – Release history.
 
 ## Philosophy
 

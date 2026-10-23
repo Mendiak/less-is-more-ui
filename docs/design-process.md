@@ -17,15 +17,16 @@ The layout should revolve around this task.
 
 ---
 
-## Step 2 — Create a simple structure
+## Step 2 — Construct the grid
 
-Prefer:
+Define the structure before writing components, following Müller-Brockmann:
 
-- single-column layouts
-- simple grid systems
-- clear vertical rhythm
+- **Columns:** 12 on desktop, 6 on tablet, 4 on mobile.
+- **Gutters:** one value from the spacing scale (16px desktop, 8px mobile).
+- **Baseline:** an 8px vertical rhythm. Every line-height and gap lands on it.
+- **Placement:** use grid spans, not arbitrary widths.
 
-Avoid unnecessary nesting of containers.
+Prefer a single-column reading measure inside the grid. Avoid unnecessary nesting of containers.
 
 ---
 

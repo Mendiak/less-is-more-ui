@@ -12,6 +12,12 @@
       "prompt": "Redesign a generic 'User Settings' dashboard. The original has many cards with shadows, a colorful sidebar, and redundant icons for each setting (Account, Privacy, Security, Notifications). Convert it to its Essential form.",
       "expected_output": "The redesign should remove all shadows, simplify the sidebar to plain text links, and use whitespace/typography instead of cards to separate sections.",
       "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Build the layout for a pricing page with three plans. Before writing CSS, define the grid and baseline you will use, then implement the layout.",
+      "expected_output": "The response should first define columns, gutters and an 8px baseline, then use a 12-column grid with span-based placement (for example, each plan spanning 4 columns), keeping line-heights and gaps on the baseline.",
+      "files": []
     }
   ]
 }
