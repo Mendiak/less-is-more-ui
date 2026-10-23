@@ -63,10 +63,9 @@ code {
 
 /* Content Block */
 .content-block {
-    padding: var(--space-4) 0;
+    padding: var(--space-4) 0 var(--space-4) var(--space-4);
     background-color: transparent;
-    border-top: 1px solid var(--ui-border-silent);
-    border-bottom: 1px solid var(--ui-border-silent);
+    border-left: 1px solid var(--ui-text);
 }
 
 /* Navigation */
