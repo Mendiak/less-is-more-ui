@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Google ignores robots.txt outside the host root, so this file only applies
+# when the project is served from a custom domain. The crawl directives that
+# matter for this GitHub Pages project live in the <meta name="robots"> tag.
+Sitemap: https://mendiak.github.io/less-is-more-ui/sitemap.xml

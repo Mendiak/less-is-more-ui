@@ -1,3 +1,78 @@
+// Analytics: every interaction pushes a named event into the GTM dataLayer
+function track(eventName, params) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: eventName }, params || {}));
+}
+
+// Outbound links and in-page navigation (delegated, so the dynamically
+// injected support button is covered too)
+document.addEventListener('click', function (event) {
+    var link = event.target.closest ? event.target.closest('a[href]') : null;
+    if (!link) return;
+
+    var href = link.getAttribute('href') || '';
+    if (!href || href === '#') return;
+
+    var target;
+    try {
+        target = new URL(link.href, window.location.href);
+    } catch (error) {
+        return;
+    }
+
+    if (target.hostname !== window.location.hostname) {
+        track('outbound_click', {
+            link_url: target.href,
+            link_domain: target.hostname,
+            link_text: (link.textContent || '').trim().slice(0, 100)
+        });
+        return;
+    }
+
+    if (href.charAt(0) === '#') {
+        var nav = link.closest('.index-nav, .sticky-nav, .footer-minimal-nav');
+        if (!nav) return;
+        var location = nav.classList.contains('index-nav') ? 'hero' :
+            (nav.classList.contains('sticky-nav') ? 'sticky' : 'footer');
+        track('nav_click', { section: href.slice(1) || 'top', nav_location: location });
+    }
+});
+
+// Content engagement: report each pillar once it has been read
+var seenSections = {};
+if ('IntersectionObserver' in window) {
+    var sectionViewObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            if (!id || seenSections[id]) return;
+            seenSections[id] = true;
+            track('section_view', { section: id });
+            sectionViewObserver.unobserve(entry.target);
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('main section.pillar').forEach(function (section) {
+        sectionViewObserver.observe(section);
+    });
+}
+
+// Scroll depth milestones
+var scrollMilestones = [25, 50, 75, 90];
+var trackedMilestones = {};
+
+function trackScrollDepth() {
+    var docHeight = document.body.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    var percent = Math.round((window.scrollY / docHeight) * 100);
+    scrollMilestones.forEach(function (milestone) {
+        if (percent >= milestone && !trackedMilestones[milestone]) {
+            trackedMilestones[milestone] = true;
+            track('scroll_depth', { percent_scrolled: milestone });
+        }
+    });
+}
+
 // Scroll Reveal Animation (initialized first so content is never left hidden)
 const observerOptions = {
     root: null,
@@ -45,6 +120,10 @@ document.querySelectorAll('.copy-button').forEach(button => {
             const originalText = textSpan.innerText;
             textSpan.innerText = 'Copied';
             this.classList.add('copied');
+
+            track('install_command_copy', {
+                copy_location: box.id === 'install' ? 'install_section' : 'hero'
+            });
             
             // Store original icon name
             const originalIconName = iconElement.getAttribute('data-lucide') || 'copy';
@@ -88,6 +167,8 @@ if (demoCopyBtn) {
 
         textSpan.textContent = 'Copied!';
         demoCopyBtn.classList.add('confirmed');
+
+        track('demo_copy_click', { case_study: 'purposeful_animation' });
 
         setTimeout(() => {
             // Revert
@@ -213,6 +294,7 @@ window.addEventListener('scroll', () => {
     window.requestAnimationFrame(() => {
         updateScrollSpy();
         updateProgress();
+        trackScrollDepth();
         scrollTicking = false;
     });
 }, { passive: true });
@@ -238,5 +320,6 @@ if (themeToggle) {
         document.documentElement.setAttribute('data-theme', nextTheme);
         localStorage.setItem('theme', nextTheme);
         syncThemeToggle();
+        track('theme_toggle', { theme: nextTheme });
     });
 }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page not found | Less Is More UI</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="google-site-verification" content="7tAbK2WB9Cx4uF76izgXcrBdBXVeqDfUd9A97KrLewU" />
+    <link rel="icon" type="image/png" href="/less-is-more-ui/assets/images/favicon.png">
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T5ZJ8T88"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --muted: #444444;
+            --rule: #000000;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #000000;
+                --text: #ffffff;
+                --muted: #aaaaaa;
+                --rule: #ffffff;
+            }
+        }
+        *,
+        *::before,
+        *::after { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+        }
+        main {
+            max-width: 34rem;
+            border-left: 1px solid var(--rule);
+            padding-left: 1.5rem;
+        }
+        .eyebrow {
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        h1 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin: 0.5rem 0 1rem;
+        }
+        p { color: var(--muted); margin: 0 0 2rem; }
+        a { color: var(--text); text-underline-offset: 0.2em; }
+        .links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5ZJ8T88" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+    <main>
+        <span class="eyebrow">Error 404</span>
+        <h1>Nothing here.</h1>
+        <p>The page you are looking for does not exist — or it was removed because it was not essential.</p>
+        <nav class="links">
+            <a href="/less-is-more-ui/">Back to the museum</a>
+            <a href="https://github.com/Mendiak/less-is-more-ui">GitHub</a>
+        </nav>
+    </main>
+</body>
+</html>
