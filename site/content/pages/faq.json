@@ -1,0 +1,101 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What exactly is included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three CSS files — references/tokens.css, assets/css/reset.css and assets/css/components.css — plus the skill instructions used by AI agents. No JavaScript, no build step and no framework."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As an agent skill, run npx skills add Mendiak/less-is-more-ui. As a CSS package, run npm install @mendiak/less-is-more-ui and import the stylesheet, or individual files. The getting started guide has the exact commands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI agents does the skill support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any agent that can read project instructions and reference files. It is distributed through the skills CLI and tested with agents that follow file-based instructions, including Claude Code, Codex and Cursor. The CSS package works independently of any agent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it replace Tailwind CSS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Tailwind is a utility layer that leaves visual decisions to you; this system makes those decisions in advance. If you already have a mature design system, it will likely conflict with it. The comparison page explains the trade-offs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it replace Bootstrap?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only for interfaces where calm and hierarchy matter more than component breadth. Bootstrap ships modals, carousels and interactive components; this system deliberately does not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use only the tokens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. tokens.css is independent of the reset and components. Many projects import only the tokens and write their own components on top of the semantic variables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it accessible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The system targets WCAG AA: text contrast at 4.5:1, non-text indicators at 3:1, visible focus states, 44px minimum targets and reduced-motion support. Accessibility still depends on how the rules are applied, so the accessibility guide is part of the system, not an appendix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it support dark mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Themes are driven by tokens and follow the operating system preference by default, with an optional manual override via a data-theme attribute."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a build step or JavaScript dependency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The CSS is plain and can be imported directly. The showcase uses a small amount of JavaScript for the theme toggle, the sticky navigation and copy buttons; the design works without it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use it in commercial projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The project is licensed under the GNU GPL v3.0. If you need a different licence for a closed product, open an issue on GitHub to discuss it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the project maintained?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is maintained by Mikel Aramendia as an open-source project. Changes are documented in the changelog, and contributions are welcome through GitHub."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why \"less is more\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the phrase is a test, not a style. If an element can be removed without affecting the task, it was not carrying meaning. The first note explains how the test is applied."
+      }
+    }
+  ]
+}

@@ -50,6 +50,8 @@ Thumbs.db
 # Misc
 .env
 .env.local
+# Site build output
+_site/
 # Gemini CLI
 .agent/
 .agents/

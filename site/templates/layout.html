@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{SEO_TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <link rel="canonical" href="{{CANONICAL}}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Mikel Aramendia">
+    <meta name="google-site-verification" content="7tAbK2WB9Cx4uF76izgXcrBdBXVeqDfUd9A97KrLewU" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:site_name" content="Less Is More UI">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="{{SEO_TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta property="og:image:width" content="1848">
+    <meta property="og:image:height" content="930">
+    <meta property="og:url" content="{{CANONICAL}}">
+    <meta property="og:type" content="{{OG_TYPE}}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{SEO_TITLE}}">
+    <meta name="twitter:description" content="{{DESCRIPTION}}">
+    <meta name="twitter:image" content="{{OG_IMAGE}}">
+    {{JSONLD}}
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T5ZJ8T88"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+    </script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="{{BASE}}assets/css/reset.css">
+    <link rel="stylesheet" href="{{BASE}}references/tokens.css">
+    <link rel="stylesheet" href="{{BASE}}assets/css/components.css">
+    <link rel="stylesheet" href="{{BASE}}assets/css/docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{BASE}}assets/images/favicon.png">
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5ZJ8T88" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a class="site-brand" href="{{BASE}}">Less Is More UI</a>
+            <nav class="site-nav" aria-label="Main">{{NAV}}</nav>
+            <div class="site-actions">
+                <a class="site-github" href="https://github.com/Mendiak/less-is-more-ui">GitHub</a>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false">
+                    <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        {{MAIN}}
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <p class="site-footer-brand">Less Is More UI</p>
+            <p class="site-footer-note">A minimalist design system for calm, functional interfaces.</p>
+            <nav class="site-footer-nav" aria-label="Footer">
+                <a href="{{BASE}}docs/">Docs</a>
+                <a href="{{BASE}}case-studies/">Case studies</a>
+                <a href="{{BASE}}notes/">Notes</a>
+                <a href="https://github.com/Mendiak/less-is-more-ui">GitHub</a>
+                <a href="https://www.npmjs.com/package/@mendiak/less-is-more-ui">npm</a>
+            </nav>
+            <p class="site-footer-meta">GNU GPL v3.0 · Mikel Aramendia</p>
+        </div>
+    </footer>
+
+    <script src="{{BASE}}assets/js/main.js"></script>
+</body>
+</html>

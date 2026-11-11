@@ -30,10 +30,15 @@ document.addEventListener('click', function (event) {
     }
 
     if (href.charAt(0) === '#') {
-        var nav = link.closest('.index-nav, .sticky-nav, .footer-minimal-nav');
+        var nav = link.closest('.index-nav, .sticky-nav, .footer-minimal-nav, .site-nav, .docs-sidebar, .page-toc, .pager, .explore-nav');
         if (!nav) return;
         var location = nav.classList.contains('index-nav') ? 'hero' :
-            (nav.classList.contains('sticky-nav') ? 'sticky' : 'footer');
+            nav.classList.contains('explore-nav') ? 'explore' :
+            nav.classList.contains('sticky-nav') ? 'sticky' :
+            nav.classList.contains('docs-sidebar') ? 'sidebar' :
+            nav.classList.contains('page-toc') ? 'toc' :
+            nav.classList.contains('pager') ? 'pager' :
+            nav.classList.contains('site-nav') ? 'header' : 'footer';
         track('nav_click', { section: href.slice(1) || 'top', nav_location: location });
     }
 });
@@ -184,6 +189,39 @@ if (demoCopyBtn) {
         }, 2000);
     });
 }
+
+// Documentation: add a copy button to every code block
+document.querySelectorAll('.prose pre').forEach((pre) => {    const code = pre.querySelector('code');
+    if (!code) return;
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'code-copy';
+    button.textContent = 'Copy';
+
+    button.addEventListener('click', () => {
+        navigator.clipboard.writeText(code.innerText).then(() => {
+            button.textContent = 'Copied';
+            const language = (code.className.match(/language-(\w+)/) || [])[1] || 'text';
+            track('code_copy', { page: window.location.pathname, language: language });
+            setTimeout(() => { button.textContent = 'Copy'; }, 1500);
+        });
+    });
+
+    pre.appendChild(button);
+});
+
+// FAQ: report which questions are opened
+document.querySelectorAll('.faq-item').forEach((item) => {
+    item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        const summary = item.querySelector('summary');
+        track('faq_open', {
+            question: (summary ? summary.textContent : '').trim().slice(0, 120),
+            page: window.location.pathname
+        });
+    });
+});
 
 // Sticky Navigation
 const stickyNav = document.getElementById('sticky-nav');

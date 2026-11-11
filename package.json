@@ -4,6 +4,11 @@
   "description": "A minimalist design system for calm, functional web interfaces. Design tokens, CSS reset, and utility patterns inspired by Mies van der Rohe and Dieter Rams.",
   "main": "index.css",
   "style": "index.css",
+  "scripts": {
+    "build": "node site/build.mjs",
+    "serve": "node site/serve.mjs",
+    "preview": "npm run build && npm run serve"
+  },
   "exports": {
     ".": "./index.css",
     "./index.css": "./index.css",

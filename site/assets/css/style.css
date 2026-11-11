@@ -1745,22 +1745,23 @@ footer a:hover {
 }
 
 .baseline-noisy .baseline-title {
-    margin: 0 0 7px;
+    margin: 0 0 3px;
     font-size: 1.15rem;
-    line-height: 1.12;
+    line-height: 1.05;
     font-weight: 700;
 }
 
 .baseline-noisy .baseline-meta {
-    margin: 0 0 19px;
-    font-size: 0.72rem;
-    line-height: 1.9;
+    margin: 0 0 28px;
+    font-size: 0.7rem;
+    line-height: 2.1;
 }
 
 .baseline-noisy .baseline-body {
     margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.15;
+    font-size: 0.92rem;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
 }
 
 .baseline-essential .baseline-title {
@@ -1782,7 +1783,23 @@ footer a:hover {
 .baseline-essential .baseline-body {
     margin: var(--space-3) 0 0;
     font-size: var(--step-0);
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+.baseline-note {
+    margin: var(--space-4) 0 0;
+    padding-top: var(--space-2);
+    border-top: 1px solid currentColor;
+    font-family: var(--ui-font-mono);
+    font-size: 0.62rem;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.65;
+}
+
+.baseline-essential .baseline-note {
+    color: var(--ui-text-dim);
 }
 
 /* Scroll Reveal Animation */
@@ -2173,4 +2190,40 @@ footer a:hover {
     font-family: var(--ui-font-sans);
     font-size: var(--step--1);
     color: var(--ui-text-muted);
+}
+
+/* Explore: links from the showcase to the documentation */
+.explore-nav {
+    border-bottom: 1px solid var(--ui-border-silent);
+}
+
+.explore-inner {
+    max-width: var(--max-width-main);
+    margin: 0 auto;
+    padding: var(--space-2) var(--space-4);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-2) var(--space-3);
+    font-size: var(--step--1);
+}
+
+.explore-inner .label {
+    font-family: var(--ui-font-mono);
+    font-size: var(--step--2);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ui-text-dim);
+}
+
+.explore-inner a {
+    color: var(--ui-text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color var(--ui-transition), border-color var(--ui-transition);
+}
+
+.explore-inner a:hover {
+    color: var(--ui-text);
+    border-bottom-color: var(--ui-text);
 }

@@ -1,0 +1,61 @@
+Less Is More UI is a design system and an AI agent skill for building calm, functional web interfaces. It provides design tokens, a CSS reset and reusable components, plus a written set of principles an assistant can apply when generating or reviewing a UI.
+
+<details class="faq-item">
+<summary>What exactly is included?</summary>
+<p>Three CSS files — <code>references/tokens.css</code>, <code>assets/css/reset.css</code> and <code>assets/css/components.css</code> — plus the skill instructions used by AI agents. No JavaScript, no build step and no framework.</p>
+</details>
+
+<details class="faq-item">
+<summary>How do I install it?</summary>
+<p>As an agent skill, run <code>npx skills add Mendiak/less-is-more-ui</code>. As a CSS package, run <code>npm install @mendiak/less-is-more-ui</code> and import the stylesheet, or individual files. The <a href="/less-is-more-ui/docs/getting-started/">getting started guide</a> has the exact commands.</p>
+</details>
+
+<details class="faq-item">
+<summary>Which AI agents does the skill support?</summary>
+<p>Any agent that can read project instructions and reference files. It is distributed through the <code>skills</code> CLI and tested with agents that follow file-based instructions, including Claude Code, Codex and Cursor. The CSS package works independently of any agent.</p>
+</details>
+
+<details class="faq-item">
+<summary>Does it replace Tailwind CSS?</summary>
+<p>No. Tailwind is a utility layer that leaves visual decisions to you; this system makes those decisions in advance. If you already have a mature design system, it will likely conflict with it. The <a href="/less-is-more-ui/compare/">comparison page</a> explains the trade-offs.</p>
+</details>
+
+<details class="faq-item">
+<summary>Does it replace Bootstrap?</summary>
+<p>Only for interfaces where calm and hierarchy matter more than component breadth. Bootstrap ships modals, carousels and interactive components; this system deliberately does not.</p>
+</details>
+
+<details class="faq-item">
+<summary>Can I use only the tokens?</summary>
+<p>Yes. <code>tokens.css</code> is independent of the reset and components. Many projects import only the tokens and write their own components on top of the semantic variables.</p>
+</details>
+
+<details class="faq-item">
+<summary>Is it accessible?</summary>
+<p>The system targets WCAG AA: text contrast at 4.5:1, non-text indicators at 3:1, visible focus states, 44px minimum targets and reduced-motion support. Accessibility still depends on how the rules are applied, so the <a href="/less-is-more-ui/docs/accessibility/">accessibility guide</a> is part of the system, not an appendix.</p>
+</details>
+
+<details class="faq-item">
+<summary>Does it support dark mode?</summary>
+<p>Yes. Themes are driven by tokens and follow the operating system preference by default, with an optional manual override via a <code>data-theme</code> attribute.</p>
+</details>
+
+<details class="faq-item">
+<summary>Is there a build step or JavaScript dependency?</summary>
+<p>No. The CSS is plain and can be imported directly. The showcase uses a small amount of JavaScript for the theme toggle, the sticky navigation and copy buttons; the design works without it.</p>
+</details>
+
+<details class="faq-item">
+<summary>Can I use it in commercial projects?</summary>
+<p>Yes. The project is licensed under the GNU GPL v3.0. If you need a different licence for a closed product, open an issue on GitHub to discuss it.</p>
+</details>
+
+<details class="faq-item">
+<summary>How is the project maintained?</summary>
+<p>It is maintained by Mikel Aramendia as an open-source project. Changes are documented in the <a href="/less-is-more-ui/changelog/">changelog</a>, and contributions are welcome through GitHub.</p>
+</details>
+
+<details class="faq-item">
+<summary>Why "less is more"?</summary>
+<p>Because the phrase is a test, not a style. If an element can be removed without affecting the task, it was not carrying meaning. The <a href="/less-is-more-ui/notes/less-is-more-applied-to-ui/">first note</a> explains how the test is applied.</p>
+</details>

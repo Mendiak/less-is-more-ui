@@ -9,9 +9,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- A documentation section at `/docs/` with ten pages generated from the existing `docs/` and `references/` Markdown: overview, getting started, principles, typography, grid, components, responsive, animation, accessibility and anti-patterns.
+- Four long-form notes: reduction as a test, the silent grid, colour as signal and the subtractive pass.
+- Standalone pages for case studies, a Tailwind/Bootstrap comparison, an FAQ with `FAQPage` structured data, an about page and the changelog.
+- `site/build.mjs`: a dependency-free static builder that renders the Markdown, generates `sitemap.xml`, `llms.txt` and `llms-full.txt`, and keeps navigation, breadcrumbs and pagination in one place. Run it with `npm run build`.
+- `site/serve.mjs`: local preview mounted at the production base path (`npm run serve`).
+- `site/assets/css/docs.css`: a documentation layout built on the same tokens, with prose styles, code blocks, tables, TOC and a responsive sidebar.
+- `TechArticle`, `WebPage`, `BreadcrumbList` and `FAQPage` structured data for the new pages.
+- Internal linking from the showcase to the documentation (navigation strip, hero index and footer) and back.
+- Analytics events for code copies, FAQ opens, documentation navigation, section reads, scroll depth and theme changes.
+- A GitHub Actions workflow that builds `_site/` and deploys it to Pages; generated HTML is no longer committed, so installing the skill does not download the website.
+
+### Changed
+
+- The website source moved to `site/`, and its build output to the git-ignored `_site/`. `style.css`, `docs.css` and `main.js` are site-only and no longer live under the published package paths.
+- The showcase `<h1>` is now the product name, with "Museum of the Essential" as the eyebrow.
+- Case Study 08 now uses longer copy and clearly different spacing and leading in each column, with the measurements labelled.
 - SEO and discovery metadata: canonical URL, `robots` directives, richer Open Graph/Twitter cards and schema.org structured data (`WebSite`, `Person`, `SoftwareApplication`).
 - `sitemap.xml`, `robots.txt` and a minimal `404.html` for GitHub Pages.
-- Google Search Console verification, Google Tag Manager (including the `noscript` fallback) and a dependency-free event layer in `assets/js/main.js`: install copies, outbound clicks, navigation, section views, scroll depth and theme changes.
+- Google Search Console verification, Google Tag Manager (including the `noscript` fallback) and a dependency-free event layer in `site/assets/js/main.js`: install copies, outbound clicks, navigation, section views, scroll depth and theme changes.
 
 ## [1.1.1] - 2026-10-23
 

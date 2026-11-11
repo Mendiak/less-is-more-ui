@@ -5,112 +5,147 @@
 <p>
   <a href="https://www.npmjs.com/package/@mendiak/less-is-more-ui"><img src="https://img.shields.io/npm/v/@mendiak/less-is-more-ui?style=flat-square&color=000" alt="npm version"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-black?style=flat-square" alt="license"></a>
+  <a href="https://mendiak.github.io/less-is-more-ui/"><img src="https://img.shields.io/badge/site-live-black?style=flat-square" alt="live site"></a>
 </p>
 
-A specialized design skill for AI agents to generate calm, high-quality, and functional web interfaces.
+A minimalist design system and an AI agent skill for calm, functional web interfaces. Design tokens, a CSS reset and reusable components, plus a written set of principles an agent can apply when building or reviewing a UI.
 
-![GitHub Screenshot](assets/images/github-screenshot.png)
+**[Showcase](https://mendiak.github.io/less-is-more-ui/)** · **[Documentation](https://mendiak.github.io/less-is-more-ui/docs/)** · **[Case studies](https://mendiak.github.io/less-is-more-ui/case-studies/)** · **[Notes](https://mendiak.github.io/less-is-more-ui/notes/)**
 
-## The Problem
-Most AI-generated UIs suffer from "visual noise": excessive shadows, generic gradients, and cluttered layouts. They often lack a clear typographic hierarchy and rational structure because LLMs tend to default to "over-designed" or generic components.
+![The Less Is More UI showcase](assets/images/github-screenshot.png)
 
-## The Solution
-`less-is-more-ui` provides a set of modernist constraints that force the agent to prioritize content and function. It transforms the agent from a generic coder into a senior designer with a Miesian perspective, focusing on:
+## The problem
 
-- **Rational Layouts:** Using grid systems and generous whitespace instead of decorative containers.
-- **Typography-First Hierarchy:** Letting text carry the weight of the interface.
-- **Subtle Palettes:** Using color to support, not dominate.
-- **Systematic Spacing:** A predefined variable-based scale for consistent rhythm.
+Most generated interfaces look the same: rounded cards, soft shadows, gradients and a hierarchy built from containers. They ask the user to decode packaging before reaching content.
 
-## Installation
+## The solution
 
-### As an AI Agent Skill
+Modernist constraints that force content and function to the front:
+
+- **Rational layouts** built on one grid, with generous whitespace instead of decorative containers.
+- **Typography-first hierarchy** where type, not colour, carries the structure.
+- **Restrained palettes** where colour reports state instead of decorating.
+- **Systematic spacing** from a single 8px scale.
+- **Honest materials**: semantic HTML, no fake depth.
+
+## Quick start
+
+### As an AI agent skill
 
 ```bash
 npx skills add Mendiak/less-is-more-ui
 ```
 
-### As a CSS Design System (npm)
+The skill installs `SKILL.md`, the principle documents and the design tokens into your agent's skills directory. From then on, prompts such as *"simplify this dashboard"* are answered with the axioms and the system applied by default.
 
-Installs design tokens, a minimalist reset, and reusable component patterns.
+### As a CSS package
 
 ```bash
 npm install @mendiak/less-is-more-ui
 ```
 
-Then in your project's CSS:
-
 ```css
-/* Import everything (tokens + reset + components) */
+/* Everything: tokens + reset + components */
 @import "@mendiak/less-is-more-ui";
 
-/* Or import only what you need */
+/* Or only what you need */
 @import "@mendiak/less-is-more-ui/references/tokens.css";
 @import "@mendiak/less-is-more-ui/assets/css/reset.css";
 @import "@mendiak/less-is-more-ui/assets/css/components.css";
 ```
 
-**What's included:**
+| Package file | Description |
+|--------------|-------------|
+| `references/tokens.css` | Modular type scale, 8px spacing scale, neutral palette, semantic aliases (`--ui-text`, `--space-2`, `--step-0`…) and dark/light themes |
+| `assets/css/reset.css` | Minimal box-sizing reset and base element normalisation |
+| `assets/css/components.css` | Buttons, inputs, cards, navigation, filters, specification lists and icons |
+| `index.css` | Entry point that imports the three files above |
 
-| File | Description |
-|------|-------------|
-| `tokens.css` | CSS custom properties: modular typographic scale, spacing system, neutral palette, semantic aliases (`var(--ui-bg)`, `var(--ui-text)`, etc.), and dark/light theme support |
-| `reset.css` | Minimalist box-sizing reset and base element normalization |
-| `components.css` | Reusable UI patterns: `.button`, `.input`, `.essential-card`, `.essential-nav`, `.essential-filters`, `.essential-specs`, `.essential-form`, `.icon`, and utility classes |
-| `style.css` | *(Demo only)* Styles for the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) showcase page. Not intended for external projects. |
+`style.css` and `docs.css` are **not** part of the npm package: they only style this website.
 
-## How to Use with AI Agents
+## Documentation
 
-Once activated, you can direct your agent with high-level design intent. The agent will use the bundled resources (`principles.md`, `references/grid.md`, `references/components.md`, etc.) to make informed decisions.
+The full guides are published at [mendiak.github.io/less-is-more-ui/docs](https://mendiak.github.io/less-is-more-ui/docs/):
 
-**Example Prompts:**
-- *"Refactor this dashboard following the Less Is More manifesto."*
-- *"Simplify this landing page. Use only the scale variables and remove all decorative elements."*
-- *"Build a contact form using the 'Honest Materials' precept (semantic HTML only)."*
+- [Getting started](https://mendiak.github.io/less-is-more-ui/docs/getting-started/)
+- [Principles and axioms](https://mendiak.github.io/less-is-more-ui/docs/principles/)
+- [Typography](https://mendiak.github.io/less-is-more-ui/docs/typography/) · [Grid](https://mendiak.github.io/less-is-more-ui/docs/grid/)
+- [Components](https://mendiak.github.io/less-is-more-ui/docs/components/)
+- [Responsive](https://mendiak.github.io/less-is-more-ui/docs/responsive/) · [Animation](https://mendiak.github.io/less-is-more-ui/docs/animations/)
+- [Accessibility](https://mendiak.github.io/less-is-more-ui/docs/accessibility/) · [Anti-patterns](https://mendiak.github.io/less-is-more-ui/docs/anti-patterns/)
 
-## Demo
-Visit the [Museum of the Essential](https://mendiak.github.io/less-is-more-ui/) for a curated showcase of these principles in action.
+The same pages are generated from the Markdown in `docs/` and `references/`, so the skill and the website never drift apart.
 
-The showcase applies the same rules it documents:
+## Using it with an agent
 
-- **Six designer profiles** — Mies van der Rohe, Louis Sullivan, Dieter Rams, Jony Ive, Josef Müller-Brockmann and Massimo Vignelli — each with a different layout treatment.
-- **Eight case studies** comparing the noisy and the essential version of the same pattern.
-- **A 12-column grid and an 8px baseline**, with section headers composed across the grid and placement expressed as spans.
-- **A single inverted chapter** (Methodology) and an inverted footer to give the page contrast without decoration.
+Once the skill is active, direct the agent with intent rather than style:
 
-## Repository Structure
+- *"Refactor this dashboard following the Less Is More principles."*
+- *"Simplify this landing page: use only the scale variables and remove decorative elements."*
+- *"Build a contact form using the Honest Materials precept (semantic HTML only)."*
 
-- `SKILL.md` – Main entry point and agent instructions.
-- `docs/principles.md` – Core design philosophy (Mies, Sullivan, Müller-Brockmann, Vignelli, Rams).
-- `docs/design-manifesto.md` – High-level goals and aesthetic standards.
-- `docs/design-process.md` – Step-by-step method for minimal interface design.
-- `docs/animations.md` – Functional standards for subtle micro-interactions.
-- `docs/responsive.md` – Strategies for mobile-first reduction.
-- `docs/accessibility.md` – Minimalist standards for inclusive design.
-- `docs/typography.md` – Typographic pairing and technical standards.
-- `docs/anti-patterns.md` – Visual friction to identify and remove.
-- `docs/design-checklist.md` – Final UI quality verification.
-- `assets/css/style.css` – Demo showcase styles for the Museum of the Essential.
-- `assets/css/components.css` – Reusable UI component patterns (buttons, forms, cards, navs).
-- `index.html` – The "Museum of the Essential" documentation and demo.
-- `references/`
-  - `axioms.md` – Foundational truths of minimal design.
-  - `grid.md` – Grid construction, spans, baseline rhythm and responsive column reduction (Müller-Brockmann).
-  - `case-studies.md` – Analysis of successful minimal interfaces.
-  - `components.md` – Pattern library for buttons, inputs, and cards.
-  - `tokens.css` – Design tokens and scale variables.
-- `evals/` – Performance benchmarks and evaluation sets.
-- `assets/css/reset.css` – Tiny modernist reset for a clean start.
-- `index.css` – Entry point for the npm package.
-- `package.json` – npm package configuration.
-- `CHANGELOG.md` – Release history.
+## Repository structure
 
-## Philosophy
+```text
+.
+├── SKILL.md                 # Skill entry point and agent instructions
+├── index.css                # npm entry point (tokens + reset + components)
+├── assets/
+│   ├── css/
+│   │   ├── reset.css        # Published package
+│   │   └── components.css   # Published package
+│   └── images/              # Screenshots used by the README and the site
+├── references/              # Skill reference material (+ tokens.css)
+├── docs/                    # Skill guides (source of truth for the site)
+├── agents/                  # Agent interface metadata
+├── evals/                   # Evaluation prompts
+├── site/                    # Website source (not part of the npm package)
+│   ├── index.html           # Showcase
+│   ├── 404.html
+│   ├── build.mjs            # Markdown → HTML, sitemap, llms.txt (no dependencies)
+│   ├── serve.mjs            # Local preview at /less-is-more-ui/
+│   ├── pages.mjs            # Page registry and routes
+│   ├── templates/layout.html
+│   ├── content/             # New pages and notes
+│   └── assets/              # Site-only CSS and JS
+├── .github/workflows/       # Build and deploy to GitHub Pages
+└── _site/                   # Build output (git-ignored)
+```
 
-1. **Less is more.** (Reduction to the essential)
-2. **Form follows function.** (Logic over decoration)
-3. **Less but better.** (Instinctive simplicity)
+## Local development
 
----
+Requires Node 18 or newer. There are no dependencies to install.
 
-Developed for clarity and purpose by [Mendiak](https://github.com/Mendiak).
+```bash
+npm run build     # generate _site/
+npm run serve     # preview at http://localhost:8080/less-is-more-ui/
+npm run preview   # build and serve
+```
+
+The `_site/` directory is generated and never committed. To add a page, create a Markdown or HTML file under `site/content/`, register it in `site/pages.mjs`, and run `npm run build`. The builder updates the navigation, breadcrumbs, pagination, `sitemap.xml`, `llms.txt` and `llms-full.txt`.
+
+## Deployment
+
+GitHub Pages is deployed by the workflow in `.github/workflows/pages.yml`: it runs the build and publishes `_site/` as an artifact.
+
+One-time setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+## SEO and analytics
+
+- Canonical URLs, `robots` directives, Open Graph/Twitter cards and schema.org structured data (`WebSite`, `Person`, `SoftwareApplication`, `TechArticle`, `WebPage`, `BreadcrumbList`, `FAQPage`).
+- Generated `sitemap.xml` (every page) and `robots.txt`.
+- `llms.txt` and `llms-full.txt` give agents a compact index and the full documentation in plain Markdown.
+- Google Search Console verification via meta tag.
+- Google Tag Manager with a dependency-free event layer: install copies, outbound clicks, navigation, section views, scroll depth, code copies, FAQ opens and theme changes.
+
+## Contributing
+
+Issues and pull requests are welcome. A report with a concrete screen and a concrete problem is more useful than an abstract suggestion. If you change a rule, update the corresponding Markdown in `docs/` or `references/` — the website is generated from it.
+
+## License
+
+[GNU GPL v3.0](LICENSE) © [Mikel Aramendia](https://mendiak.github.io/portfolio/)
+
+## Credits
+
+The principles referenced throughout come from Ludwig Mies van der Rohe, Louis Sullivan, Dieter Rams, Jony Ive, Josef Müller-Brockmann and Massimo Vignelli. The mistakes in applying them are the author's.

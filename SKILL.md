@@ -43,9 +43,9 @@ Execute the "Subtractive Pass" and follow the process in `docs/design-process.md
 
 ## Bundled Resources
 
-- `index.html`: The "Museum of the Essential" - a live showcase and playground for all principles.
+- `site/index.html`: The "Museum of the Essential" - a live showcase and playground for all principles.
 - `assets/css/reset.css`: The mandatory modernist base for all CSS.
-- `assets/css/style.css`: The core implementation of the system's aesthetics.
+- `site/assets/css/style.css`: The core implementation of the system's aesthetics.
 - `references/tokens.css`: The Essential Design System tokens. **Always use these semantic variables instead of hardcoded hex values or generic units.**
 - `references/axioms.md`: The logical foundation for design decisions.
 - `references/grid.md`: Grid construction, spans, baseline rhythm and responsive column reduction (Müller-Brockmann).
@@ -64,7 +64,7 @@ Execute the "Subtractive Pass" and follow the process in `docs/design-process.md
 Load only the resources needed for the task. Start with `references/axioms.md` for reasoning,
 `references/tokens.css` before writing CSS, `references/grid.md` before laying out a page, and
 `references/components.md` before implementing buttons, forms, cards, navigation, or other
-interface primitives. Use `index.html` as a reference for the final visual quality expected.
+interface primitives. Use `site/index.html` as a reference for the final visual quality expected.
 
 ## When to Use This Skill
 
